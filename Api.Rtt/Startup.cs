@@ -19,38 +19,49 @@ namespace Api.Rtt
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-        }
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    c => c
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowAnyOrigin()
+                );
+            });
+            
+            services.AddMvc();
+            // services.AddDbContext<ApiContext>(options =>
+            //     options.UseMySQL(
+            //         Configuration["Data:ConnectionString"]));
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+           // services.AddTransient<DataSeed>();
+        }
+        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseCors("CorsPolicy");
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
-            }
-
+            
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthorization();
 
+            SetupEndpoints(app);
+            //seed.SeedData();
+        }
+        
+        private static void SetupEndpoints(IApplicationBuilder app)
+        {
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "api/{controller}/{action}/{id?}");
             });
         }
     }
