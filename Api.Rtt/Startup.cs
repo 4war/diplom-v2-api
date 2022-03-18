@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Api.Rtt.Models;
+using Api.Rtt.Models.Seeds;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,6 +22,7 @@ namespace Api.Rtt
         }
 
         public IConfiguration Configuration { get; }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options =>
@@ -30,31 +34,31 @@ namespace Api.Rtt
                         .AllowAnyOrigin()
                 );
             });
-            
-            services.AddMvc();
-            // services.AddDbContext<ApiContext>(options =>
-            //     options.UseMySQL(
-            //         Configuration["Data:ConnectionString"]));
 
-           // services.AddTransient<DataSeed>();
+            services.AddMvc();
+            services.AddDbContext<ApiContext>(options =>
+                options.UseMySQL(
+                    Configuration["Data:ConnectionString"]));
+
+            services.AddTransient<DataSeed>();
         }
-        
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataSeed seed)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseCors("CorsPolicy");
             }
-            
+
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
 
             SetupEndpoints(app);
-            //seed.SeedData();
+            seed.SeedData();
         }
-        
+
         private static void SetupEndpoints(IApplicationBuilder app)
         {
             app.UseEndpoints(endpoints =>
