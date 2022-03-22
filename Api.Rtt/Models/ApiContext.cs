@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Api.Rtt.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api.Rtt.Models
 {
@@ -10,5 +11,7 @@ namespace Api.Rtt.Models
         }
         
         public DbSet<Tournament> Tournaments { get; set; }
+        
+        public DbSet<TennisCenter> TennisCenters { get; set; }
     }
 }

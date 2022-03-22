@@ -1,22 +1,39 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Api.Rtt.Models;
+using Api.Rtt.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api.Rtt.Controllers
 {
     [Route("api/[controller]")]
     public class TournamentController : Controller
     {
-        private readonly List<Tournament> _tournaments = new()
+        private readonly ApiContext _context;
+        public TournamentController(ApiContext context)
         {
-            new Tournament(){Age = "Тест", Name = "Тест", CategoryDigit = "Тест", CategoryLetter = "Тест"},
-        };
+            _context = context;
+        }
         
         [HttpGet(Name = "GetTournaments")]
-        public IActionResult Get()
+        public IEnumerable<Tournament> Get()
         {
-            return Ok(_tournaments.OrderBy(x => x.Age).ToList());
+            return _context.Tournaments.OrderBy(x => x.Age).ToList();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get([FromRoute] int id)
+        {
+            var tournament = await _context.Tournaments.SingleOrDefaultAsync(x => x.Id == id);
+
+            if (tournament is null)
+            {
+                return NotFound();
+            }
+
+            return Ok(tournament);
         }
 
         [HttpPost]
@@ -27,8 +44,9 @@ namespace Api.Rtt.Controllers
                 return BadRequest();
             }
 
-            _tournaments.Add(tournament);
-            return Ok(_tournaments);
+            _context.Tournaments.Add(tournament);
+            _context.SaveChanges();
+            return Ok(_context.Tournaments);
         }
     }
 }
