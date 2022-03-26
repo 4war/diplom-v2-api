@@ -48,15 +48,19 @@ namespace Api.Rtt.Models.Seeds
         private void SeedTournaments()
         {
             var factoryList = new List<TournamentFactory>();
-            var newFactory = new TournamentFactory()
+            var t = new Tournament()
             {
-                Ages = new List<int>() { 14 },
                 Category = "IV A",
                 Name = "САМАРСКИЙ КУБОК",
-                HasQualification = true,
                 TennisCenter = _context.TennisCenters.First(x => x.Name == "ДЮСШ №1"),
                 NumberOfQualificationWinners = 4,
                 DateStart = new DateTime(2022, 1, 3),
+            };
+            
+            var newFactory = new TournamentFactory(t)
+            {
+                Ages = new List<int>() { 14 },
+                HasQualification = true,
             };
             newFactory.SetDate();
             factoryList.Add(newFactory);

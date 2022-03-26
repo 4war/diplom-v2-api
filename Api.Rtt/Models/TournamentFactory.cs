@@ -25,6 +25,16 @@ namespace Api.Rtt.Models
             DateEnd = DateStart.AddDays(Math.Log2(NetRange));
             DateRequest = DateStart.AddDays(-14);
         }
+
+        public TournamentFactory(Tournament tournament)
+        {
+            Category = tournament.Category;
+            Name = tournament.Name;
+            TennisCenter = tournament.TennisCenter;
+            NumberOfQualificationWinners = tournament.NetRange / 8;
+            DateStart = tournament.DateStart;
+            SetDate();
+        }
         
         public List<Tournament> Generate()
         {
@@ -56,9 +66,7 @@ namespace Api.Rtt.Models
         public Tournament GenerateMain(Gender gender, int age)
         {
             var tournament = GenerateBasedTournament(gender, age);
-            tournament.Stage = Stage.Main;
-
- 
+            tournament.Stage = (int)Stage.Main;
             
             return tournament;
         }
@@ -66,7 +74,7 @@ namespace Api.Rtt.Models
         public Tournament GenerateQualification(Gender gender, int age)
         {
             var tournament = GenerateBasedTournament(gender, age);
-            tournament.Stage = Stage.Qual;
+            tournament.Stage = (int)Stage.Qual;
             tournament.NetRange /= tournament.NumberOfQualificationWinners;
             var days = Math.Log2(tournament.NetRange);
             var qualificationStartDate = tournament.DateStart.AddDays(-days);
@@ -83,7 +91,7 @@ namespace Api.Rtt.Models
                 Name = Name,
                 Age = age,
                 Category = Category,
-                Gender = gender,
+                Gender = (int)gender,
                 DateStart = DateStart,
                 DateEnd = DateEnd,
                 DateRequest = DateRequest,

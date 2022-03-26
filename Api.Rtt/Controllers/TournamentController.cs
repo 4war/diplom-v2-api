@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Rtt.Models;
@@ -44,7 +45,18 @@ namespace Api.Rtt.Controllers
                 return BadRequest();
             }
 
-            _context.Tournaments.Add(tournament);
+            var factory = new TournamentFactory(tournament)
+            {
+                Ages = new List<int>() { tournament.Age },
+                HasQualification = true,
+            };
+
+            var list = factory.Generate();
+            foreach (var t in list)
+            {
+                _context.Tournaments.Add(t);
+            }
+           
             _context.SaveChanges();
             return Ok(_context.Tournaments);
         }
