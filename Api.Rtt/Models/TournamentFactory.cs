@@ -11,14 +11,13 @@ namespace Api.Rtt.Models
         public List<int> Ages { get; set; }
         public string Category { get; set; }
         public bool HasQualification { get; set; }
-        public Tournament Qualification { get; set; }
         public int NumberOfQualificationWinners { get; set; }
         public DateTime DateStart { get; set; }
         public DateTime DateEnd { get; set; }
         public DateTime DateRequest { get; set; }
         public int NetRange { get; set; } = 32;
         public TennisCenter TennisCenter { get; set; }
-        public List<Gender> Genders { get; set; } = new List<Gender>() { Gender.Male, Gender.Female };
+        public List<int> Genders { get; set; } = new() { (int)Gender.Male, (int)Gender.Female };
 
         public void SetDate()
         {
@@ -34,6 +33,10 @@ namespace Api.Rtt.Models
             NumberOfQualificationWinners = tournament.NetRange / 8;
             DateStart = tournament.DateStart;
             SetDate();
+        }
+        public TournamentFactory()
+        {
+
         }
         
         public List<Tournament> Generate()
@@ -63,7 +66,7 @@ namespace Api.Rtt.Models
             return list;
         }
 
-        public Tournament GenerateMain(Gender gender, int age)
+        public Tournament GenerateMain(int gender, int age)
         {
             var tournament = GenerateBasedTournament(gender, age);
             tournament.Stage = (int)Stage.Main;
@@ -71,7 +74,7 @@ namespace Api.Rtt.Models
             return tournament;
         }
 
-        public Tournament GenerateQualification(Gender gender, int age)
+        public Tournament GenerateQualification(int gender, int age)
         {
             var tournament = GenerateBasedTournament(gender, age);
             tournament.Stage = (int)Stage.Qual;
@@ -84,7 +87,7 @@ namespace Api.Rtt.Models
             return tournament;
         }
 
-        private Tournament GenerateBasedTournament(Gender gender, int age)
+        private Tournament GenerateBasedTournament(int gender, int age)
         {
             return new Tournament()
             {

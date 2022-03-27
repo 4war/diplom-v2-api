@@ -21,7 +21,7 @@ namespace Api.Rtt.Controllers
         [HttpGet(Name = "GetTournaments")]
         public IEnumerable<Tournament> Get()
         {
-            return _context.Tournaments.OrderBy(x => x.Age).ToList();
+            return _context.Tournaments.OrderBy(x => x.DateStart).ToList();
         }
 
         [HttpGet("{id}")]
@@ -58,7 +58,7 @@ namespace Api.Rtt.Controllers
             }
            
             _context.SaveChanges();
-            return Ok(_context.Tournaments);
+            return RedirectToAction("Get");
         }
     }
 }
