@@ -16,8 +16,21 @@ namespace Api.Rtt.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            //todo: create anonymous factories
-            return Ok(_context.Tournaments.ToList().GroupBy(x => x.Name).ToList());
+            return Ok(_context.Tournaments.ToList().GroupBy(x => x.Name).
+                Select(g => new TournamentFactory()
+                {
+                    Name = g.Key,
+                    Category = g.First().Category,
+                    Ages = g.Select(x => x.Age).Distinct().ToList(),
+                    Genders = g.Select(x => x.Gender).Distinct().ToList(),
+                    DateStart = g.First(x => x.IdQualification.HasValue).DateStart,
+                    DateEnd = g.First(x => x.IdQualification.HasValue).DateEnd,
+                    DateRequest = g.First(x => x.IdQualification.HasValue).DateRequest,
+                    HasQualification = g.Any(x => x.IdQualification.HasValue),
+                    NetRange = g.First(x => x.IdQualification.HasValue).NetRange,
+                    TennisCenter = g.First().TennisCenter,
+                    NumberOfQualificationWinners = g.First(x => x.IdQualification.HasValue).NumberOfQualificationWinners,
+                }).ToList());
         }
         
         [HttpPost]
