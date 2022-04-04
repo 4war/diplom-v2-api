@@ -19,12 +19,12 @@ namespace Api.Rtt.Models.Entities
         public DateTime DateRequest { get; set; }
         public int NetRange { get; set; }
 
-        public TennisCenter TennisCenter { get; set; }
+        public virtual TennisCenter TennisCenter { get; set; }
 
-        [ForeignKey("TennisCenter")] public int IdTennisCenter { get; set; }
+        [ForeignKey("TennisCenter")] public int TennisCenterId { get; set; }
 
-        public Tournament Qualification { get; set; }
-        [ForeignKey("Qualification")] public int? IdQualification { get; set; }
+        public virtual Tournament Qualification { get; set; }
+        [ForeignKey("Qualification")] public int? QualificationId { get; set; }
 
         public int NumberOfQualificationWinners { get; set; }
     }

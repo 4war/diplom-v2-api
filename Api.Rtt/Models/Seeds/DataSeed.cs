@@ -16,6 +16,7 @@ namespace Api.Rtt.Models.Seeds
 
         public void SeedData()
         {
+            _context.Database.EnsureDeleted();
             _context.Database.EnsureCreated();
             if (!_context.TennisCenters.Any())
             {
@@ -32,11 +33,11 @@ namespace Api.Rtt.Models.Seeds
         {
             var list = new List<TennisCenter>()
             {
-                new() { Name = "ДЮСШ №1", Address = "ул. Ново-Садовая, 32А, Самара, Самарская обл., 443110", },
-                new() { Name = "Тригон", Address = "ул. Дачная, 4А, Самара, Самарская обл., 443096", },
-                new() { Name = "СДЮСШОР по теннису", Address = "Шушенская ул., Самара, Самарская обл., 443011", },
-                new() { Name = "Тольятти Теннис Центр", Address = "ул. Баныкина, 19А, Тольятти, Самарская обл., 445021", },
-                new() { Name = "Davis", Address = "ул. Спортивная, 19, Тольятти, Самарская обл., 445057", },
+                new() { Name = "ДЮСШ №1", Address = "ул. Ново-Садовая, 32А, Самара, Самарская обл., 443110", City = "Самара"},
+                new() { Name = "Тригон", Address = "ул. Дачная, 4А, Самара, Самарская обл., 443096", City = "Самара"},
+                new() { Name = "СДЮСШОР по теннису", Address = "Шушенская ул., Самара, Самарская обл., 443011", City = "Самара"},
+                new() { Name = "Тольятти Теннис Центр", Address = "ул. Баныкина, 19А, Тольятти, Самарская обл., 445021", City = "Тольятти"},
+                new() { Name = "Davis", Address = "ул. Спортивная, 19, Тольятти, Самарская обл., 445057",City = "Тольятти" },
             };
 
             foreach (var center in list)
@@ -48,25 +49,131 @@ namespace Api.Rtt.Models.Seeds
         private void SeedTournaments()
         {
             var factoryList = new List<TournamentFactory>();
-            var t = new Tournament()
+            
+            factoryList.Add(new TournamentFactory()
             {
                 Category = "IV A",
                 Name = "САМАРСКИЙ КУБОК",
                 TennisCenter = _context.TennisCenters.First(x => x.Name == "ДЮСШ №1"),
                 NumberOfQualificationWinners = 4,
                 DateStart = new DateTime(2022, 1, 3),
-            };
-            
-            var newFactory = new TournamentFactory(t)
-            {
                 Ages = new List<int>() { 14 },
                 HasQualification = true,
-            };
-            newFactory.SetDate();
-            factoryList.Add(newFactory);
+            });
+            
+            factoryList.Add(new TournamentFactory()
+            {
+                Category = "IV В",
+                Name = "Зимний Кубок ФТСО",
+                TennisCenter = _context.TennisCenters.First(x => x.Id == 4),
+                NumberOfQualificationWinners = 4,
+                DateStart = new DateTime(2021, 1, 6),
+                Ages = new List<int>() { 12, 16 },
+                HasQualification = true,
+            });
+            
+            factoryList.Add(new TournamentFactory()
+            {
+                Category = "IV В",
+                Name = "Зимний Кубок МОО ФТ г. о. Самара",
+                TennisCenter = _context.TennisCenters.First(x => x.Id == 1),
+                NumberOfQualificationWinners = 4,
+                DateStart = new DateTime(2021, 1, 12),
+                Ages = new List<int>() { 12 },
+                HasQualification = true,
+            });
+            
+            factoryList.Add(new TournamentFactory()
+            {
+                Category = "IV В",
+                Name = "Турнир на призы Tecnifibre",
+                TennisCenter = _context.TennisCenters.First(x => x.Id == 1),
+                NumberOfQualificationWinners = 4,
+                DateStart = new DateTime(2021, 1, 19),
+                Ages = new List<int>() { 14 },
+                HasQualification = true,
+            });
+            
+            factoryList.Add(new TournamentFactory()
+            {
+                Category = "III В",
+                Name = "Первенство Самарской области",
+                TennisCenter = _context.TennisCenters.First(x => x.Id == 4),
+                NumberOfQualificationWinners = 4,
+                DateStart = new DateTime(2021, 1, 25),
+                Ages = new List<int>() { 18 },
+                HasQualification = true,
+            });
+            
+            factoryList.Add(new TournamentFactory()
+            {
+                Category = "III В",
+                Name = "Первенство Самарской области",
+                TennisCenter = _context.TennisCenters.First(x => x.Id == 4),
+                NumberOfQualificationWinners = 4,
+                DateStart = new DateTime(2021, 2, 8),
+                Ages = new List<int>() { 12 },
+                HasQualification = true,
+            });
+            
+            factoryList.Add(new TournamentFactory()
+            {
+                Category = "III В",
+                Name = "Первенство Самарской области",
+                TennisCenter = _context.TennisCenters.First(x => x.Id == 1),
+                NumberOfQualificationWinners = 4,
+                DateStart = new DateTime(2021, 2, 23),
+                Ages = new List<int>() { 14 },
+                HasQualification = true,
+            });
+            
+            factoryList.Add(new TournamentFactory()
+            {
+                Category = "III В",
+                Name = "Первенство Самарской области",
+                TennisCenter = _context.TennisCenters.First(x => x.Id == 4),
+                NumberOfQualificationWinners = 4,
+                DateStart = new DateTime(2021, 3, 22),
+                Ages = new List<int>() { 16 },
+                HasQualification = true,
+            });
+            
+            factoryList.Add(new TournamentFactory()
+            {
+                Category = "IV В",
+                Name = "Весенний кубок МОО ФТ г.о.Самара",
+                TennisCenter = _context.TennisCenters.First(x => x.Id == 1),
+                NumberOfQualificationWinners = 4,
+                DateStart = new DateTime(2021, 3, 22),
+                Ages = new List<int>() { 12 },
+                HasQualification = true,
+            });
+            
+            factoryList.Add(new TournamentFactory()
+            {
+                Category = "III В",
+                Name = "Первенство Самарской области",
+                TennisCenter = _context.TennisCenters.First(x => x.Id == 1),
+                NumberOfQualificationWinners = 4,
+                DateStart = new DateTime(2021, 5, 4),
+                Ages = new List<int>() { 12 },
+                HasQualification = true,
+            });
+            
+            factoryList.Add(new TournamentFactory()
+            {
+                Category = "IV А",
+                Name = "Мемориал А.Япрынцева",
+                TennisCenter = _context.TennisCenters.First(x => x.Id == 1),
+                NumberOfQualificationWinners = 4,
+                DateStart = new DateTime(2021, 5, 11),
+                Ages = new List<int>() { 16 },
+                HasQualification = true,
+            });
 
             foreach (var factory in factoryList)
             {
+                factory.SetDate();
                 var result = factory.Generate();
                 foreach (var tournament in result)
                 {

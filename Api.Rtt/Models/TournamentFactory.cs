@@ -7,6 +7,7 @@ namespace Api.Rtt.Models
 {
     public class TournamentFactory
     {
+        public int FirstTournamentId { get; set; }
         public string Name { get; set; }
         public List<int> Ages { get; set; }
         public string Category { get; set; }
@@ -18,6 +19,7 @@ namespace Api.Rtt.Models
         public int NetRange { get; set; } = 32;
         public TennisCenter TennisCenter { get; set; }
         public List<int> Genders { get; set; } = new() { (int)Gender.Male, (int)Gender.Female };
+        public List<Tournament> Tournaments { get; set; } = new List<Tournament>();
 
         public void SetDate()
         {
@@ -32,11 +34,10 @@ namespace Api.Rtt.Models
             TennisCenter = tournament.TennisCenter;
             NumberOfQualificationWinners = tournament.NetRange / 8;
             DateStart = tournament.DateStart;
-            SetDate();
         }
+        
         public TournamentFactory()
         {
-
         }
         
         public List<Tournament> Generate()
@@ -63,6 +64,7 @@ namespace Api.Rtt.Models
                 }
             }
 
+            Tournaments = list;
             return list;
         }
 
@@ -79,8 +81,7 @@ namespace Api.Rtt.Models
             var tournament = GenerateBasedTournament(gender, age);
             tournament.Stage = (int)Stage.Qual;
             tournament.NetRange /= tournament.NumberOfQualificationWinners;
-            var days = Math.Log2(tournament.NetRange);
-            var qualificationStartDate = tournament.DateStart.AddDays(-days);
+            var qualificationStartDate = tournament.DateStart.AddDays(-2);
             tournament.DateEnd = tournament.DateStart.AddDays(-1);
             tournament.DateStart = qualificationStartDate;
 
@@ -94,12 +95,12 @@ namespace Api.Rtt.Models
                 Name = Name,
                 Age = age,
                 Category = Category,
-                Gender = (int)gender,
+                Gender = gender,
                 DateStart = DateStart,
                 DateEnd = DateEnd,
                 DateRequest = DateRequest,
                 NetRange = NetRange,
-                IdTennisCenter = TennisCenter.Id,
+                TennisCenterId = TennisCenter.Id,
                 NumberOfQualificationWinners = NumberOfQualificationWinners,
             };
         }
