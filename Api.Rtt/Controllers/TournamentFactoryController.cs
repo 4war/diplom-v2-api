@@ -32,10 +32,10 @@ namespace Api.Rtt.Controllers
                 var firstDate = tournament.DateStart;
                 if (tournament.Qualification is not null)
                     firstDate = tournament.Qualification.DateStart;
-                
+
                 if (!groups[tournament.Name].ContainsKey(firstDate))
                     groups[tournament.Name][firstDate] = new List<Tournament>();
-                
+
                 groups[tournament.Name][firstDate].Add(tournament);
             }
 
@@ -57,7 +57,7 @@ namespace Api.Rtt.Controllers
                 NumberOfQualificationWinners =
                     g.Value.First(x => x.QualificationId.HasValue).NumberOfQualificationWinners,
                 Tournaments = g.Value.ToList(),
-            })).SelectMany(m => m).ToList();
+            })).SelectMany(m => m).OrderBy(x => x.DateStart).ToList();
             return Ok(result);
         }
 
