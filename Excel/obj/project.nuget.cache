@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "WD3OoEhcm6uIl9ZlzIIbJd7xEMbRSznKAYMpWOEPlBgZQhwMttZpm5E152g15P+2DuxD6FkoJ3k0tLXiaSWVWQ==",
+  "dgSpecHash": "ELA+UASxnA62UP0rsS0hy7nC82IrXDt8fanhp18PPnmlHV1xbYZZd87usIxwHTQIdG9dK3TL0Pr+9ei5pCJ5cg==",
   "success": true,
   "projectFilePath": "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Excel\\Excel.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\fedro\\.nuget\\packages\\microsoft.office.interop.excel\\15.0.4795.1000\\microsoft.office.interop.excel.15.0.4795.1000.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Office.Interop.Excel 15.0.4795.1000' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Office.Interop.Excel",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
