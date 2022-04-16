@@ -12,10 +12,12 @@ namespace Api.Rtt.Models.Seeds
     private PlayerSeed _playerSeed;
     private TennisCenterSeed _tennisCenterSeed;
     private CitySeed _citySeed;
+    private PlayerTournamentSeed _playerTournamentSeed;
 
     public DataSeed(ApiContext apiContext)
     {
       _context = apiContext;
+      _playerTournamentSeed = new PlayerTournamentSeed(apiContext);
       _tournamentFactorySeed = new TournamentFactorySeed(apiContext);
       _playerSeed = new PlayerSeed(apiContext);
       _tennisCenterSeed = new TennisCenterSeed(apiContext);
@@ -24,7 +26,7 @@ namespace Api.Rtt.Models.Seeds
 
     public void SeedData()
     {
-      _context.Database.EnsureDeleted();
+      //_context.Database.EnsureDeleted();
       _context.Database.EnsureCreated();
 
       if (!_context.Cities.Any())
@@ -38,6 +40,9 @@ namespace Api.Rtt.Models.Seeds
 
       if (!_context.Players.Any())
         SeedPlayers();
+
+      if (!_context.PlayerTournaments.Any())
+        SeedPlayerTournament();
     }
 
     private void SeedCities()
@@ -78,10 +83,22 @@ namespace Api.Rtt.Models.Seeds
 
     private void SeedPlayers()
     {
-      var playerList = _playerSeed.GetList();
+      var playerList = _playerSeed.GetExcelList();
       foreach (var player in playerList)
       {
         _context.Players.Add(player);
+      }
+
+      _context.SaveChanges();
+    }
+
+
+    private void SeedPlayerTournament()
+    {
+      var list = _playerTournamentSeed.GetList();
+      foreach (var playerTournament in list)
+      {
+        _context.PlayerTournaments.Add(playerTournament);
       }
 
       _context.SaveChanges();

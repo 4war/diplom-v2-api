@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using Api.Rtt.Excel;
 using Api.Rtt.Models.Entities;
 
 namespace Api.Rtt.Models.Seeds
@@ -12,6 +14,13 @@ namespace Api.Rtt.Models.Seeds
     public PlayerSeed(ApiContext context)
     {
       _context = context;
+    }
+
+    public List<Player> GetExcelList()
+    {
+      var playerReader = new PlayerReader();
+      var result = playerReader.Copy();
+      return result;
     }
 
     public List<Player> GetList()
@@ -100,18 +109,6 @@ namespace Api.Rtt.Models.Seeds
         Patronymic = "Сергеевич",
         Rni = 42264,
         Point = 276,
-      });
-
-      list.Add(new Player()
-      {
-        City = "Тольятти",
-        DateOfBirth = new DateTime(2009, 7, 17),
-        Gender = 0,
-        Surname = "Китев",
-        Name = "Богдан",
-        Patronymic = "Олегович",
-        Rni = 40176,
-        Point = 174,
       });
 
       list.Add(new Player()

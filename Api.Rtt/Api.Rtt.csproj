@@ -6,6 +6,8 @@
 
     <ItemGroup>
       <PackageReference Include="EntityFrameworkCore.Extensions" Version="3.2.1" />
+      <PackageReference Include="ExcelDataReader" Version="3.7.0-develop00310" />
+      <PackageReference Include="ExcelDataReader.DataSet" Version="3.7.0-develop00310" />
       <PackageReference Include="Microsoft.AspNetCore.Mvc.DataAnnotations" Version="2.2.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.0" />
@@ -15,6 +17,8 @@
       </PackageReference>
       <PackageReference Include="morelinq" Version="3.3.2" />
       <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.0" />
+      <PackageReference Include="NUnit" Version="3.13.3" />
+      <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
     </ItemGroup>
 
     <ItemGroup>

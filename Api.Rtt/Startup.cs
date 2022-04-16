@@ -27,7 +27,7 @@ namespace Api.Rtt
         {
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolicy",
+              options.AddPolicy("CorsPolicy",
                     c => c
                         .AllowAnyHeader()
                         .AllowAnyMethod()
@@ -37,8 +37,11 @@ namespace Api.Rtt
 
             services.AddMvc();
             services.AddDbContext<ApiContext>(options =>
-                options.UseMySQL(
-                    Configuration["Data:ConnectionString"]));
+            {
+              options.EnableSensitiveDataLogging();
+              options.UseMySQL(
+                Configuration["Data:ConnectionString"]);
+            });
 
             services.AddTransient<DataSeed>();
         }

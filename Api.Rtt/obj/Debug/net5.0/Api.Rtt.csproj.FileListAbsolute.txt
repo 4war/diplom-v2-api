@@ -60,3 +60,12 @@ C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\obj
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\MoreLinq.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\NUnit3.TestAdapter.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\NUnit3.TestAdapter.pdb
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\nunit.engine.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\nunit.engine.api.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\nunit.engine.core.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\testcentric.engine.metadata.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\nunit.framework.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.DataSet.dll

@@ -2,8 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Rtt", "Api.Rtt\Api.Rtt.csproj", "{1A8232C6-9BEC-4B7E-A873-6B4449B7E202}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excel", "Excel\Excel.csproj", "{CD7D19C7-1697-43D9-9846-539EC7C58B8B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,9 +12,5 @@ Global
 		{1A8232C6-9BEC-4B7E-A873-6B4449B7E202}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A8232C6-9BEC-4B7E-A873-6B4449B7E202}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A8232C6-9BEC-4B7E-A873-6B4449B7E202}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD7D19C7-1697-43D9-9846-539EC7C58B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD7D19C7-1697-43D9-9846-539EC7C58B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD7D19C7-1697-43D9-9846-539EC7C58B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD7D19C7-1697-43D9-9846-539EC7C58B8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

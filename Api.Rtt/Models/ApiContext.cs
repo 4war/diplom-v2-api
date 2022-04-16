@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using Api.Rtt.Models.Entities;
+using Api.Rtt.Models.Entities.ManyWithMany;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Rtt.Models
@@ -23,5 +24,7 @@ namespace Api.Rtt.Models
     public DbSet<Player> Players { get; set; }
 
     public DbSet<City> Cities { get; set; }
+
+    public DbSet<PlayerTournament> PlayerTournaments { get; set; }
   }
 }
