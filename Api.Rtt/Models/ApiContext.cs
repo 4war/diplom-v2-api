@@ -9,12 +9,18 @@ namespace Api.Rtt.Models
   {
     public ApiContext(DbContextOptions<ApiContext> options) : base(options)
     {
-
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
       optionsBuilder.UseLazyLoadingProxies();
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+      base.OnModelCreating(modelBuilder);
+
+      modelBuilder.Entity<PlayerTournament>().HasKey(x => new { x.Rni, x.Id });
     }
 
     public DbSet<Tournament> Tournaments { get; set; }
