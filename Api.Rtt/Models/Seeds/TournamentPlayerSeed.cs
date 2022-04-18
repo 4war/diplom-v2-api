@@ -15,7 +15,7 @@ namespace Api.Rtt.Models.Seeds
 
     public List<PlayerTournament> GetList()
     {
-      var playerTournamentReader = new PlayerTournamentReader();
+      var playerTournamentReader = new PlayerTournamentReader(_context);
       var result = playerTournamentReader.Copy();
       return result;
     }
