@@ -15,6 +15,25 @@ namespace Api.Rtt.Helpers
         throw new ArgumentException("precision should be in [0;1]");
       }
 
+      var tokensX = Regex.Split(x, @"\W").Where(s => s.Length > 1).ToList();
+      var tokensY = Regex.Split(y, @"\W").Where(s => s.Length > 1).ToList();
+
+      if (tokensX.First() != tokensY.First())
+      {
+        return false;
+      }
+
+      var hashSetX = new List<string>(tokensX);
+      var hashSetY = new List<string>(tokensY);
+
+      var intersection = hashSetX.Intersect(hashSetY).ToList();
+      var maxCountHashSet = Math.Min(tokensX.Count, tokensY.Count);
+      var similarity = (double)intersection.Count / maxCountHashSet;
+      return similarity > precision;
+    }
+
+    public static double GetSimilarityTo(this string x, string y)
+    {
       var tokensX = Regex.Split(x, "\\W");
       var tokensY = Regex.Split(y, "\\W");
 
@@ -23,8 +42,7 @@ namespace Api.Rtt.Helpers
 
       var intersection = hashSetX.Intersect(hashSetY).ToList();
       var maxCountHashSet = Math.Max(hashSetX.Count, hashSetY.Count);
-      var similarity = (double)intersection.Count / maxCountHashSet;
-      return similarity > precision;
+      return (double)intersection.Count / maxCountHashSet;
     }
   }
 }
