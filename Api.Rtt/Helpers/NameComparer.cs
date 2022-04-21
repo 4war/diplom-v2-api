@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using MoreLinq.Extensions;
 
 namespace Api.Rtt.Helpers
 {
@@ -44,5 +45,23 @@ namespace Api.Rtt.Helpers
       var maxCountHashSet = Math.Max(hashSetX.Count, hashSetY.Count);
       return (double)intersection.Count / maxCountHashSet;
     }
+
+    public static StringWithPrecision GetMostSimilar(this string x, IEnumerable<string> list)
+    {
+      var best = list
+        .Select(y =>
+          new StringWithPrecision(){ Value = y, SimilarTo = x, Precision = y.GetSimilarityTo(x) })
+        .MaxBy(pair => pair.Precision)
+        .FirstOrDefault();
+
+      return best;
+    }
+  }
+
+  public class StringWithPrecision
+  {
+    public string Value { get; set; }
+    public string SimilarTo { get; set; }
+    public double Precision { get; set; }
   }
 }

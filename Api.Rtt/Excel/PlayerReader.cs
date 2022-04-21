@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,26 @@ namespace Api.Rtt.Excel
   {
     public List<Player> Copy()
     {
+      //todo: also get Female list
       var directory = Directory.GetParent(Environment.CurrentDirectory)?.FullName;
+
+      if (directory is null)
+      {
+        throw new NotImplementedException("Wrong path for player seed directory");
+      }
+
+      var result = new List<Player>();
+      var pathMale = Path.Combine(directory, "Excel", "Male.xlsx");
+      result = result.Concat(Copy(pathMale)).ToList();
+      var pathFemale = Path.Combine(directory, "Excel", "Female.xlsx");
+      result = result.Concat(Copy(pathFemale)).ToList();
+
       var path = Path.Combine(directory, "Excel", "PlayersRussia.xlsx");
-      return Copy(path);
+      var expected = Copy(path);
+
+      Assert.AreEqual(expected.Count, result.Count);
+
+      return result;
     }
 
     public List<Player> Copy(string path)
@@ -28,7 +46,8 @@ namespace Api.Rtt.Excel
       var dataSet = reader.AsDataSet();
       var table = dataSet.Tables[0];
 
-      var gender = 0;
+      var gender = path.Split("\\")
+        .Last().Split(".").First().ToLower() == "female" ? 1 : 0;
 
       for (var i = 4; i < table.Rows.Count; i++)
       {
@@ -46,7 +65,7 @@ namespace Api.Rtt.Excel
           Point = int.Parse(row[7]?.ToString() ?? string.Empty),
           City = row[4].ToString(),
           DateOfBirth = dobValue,
-          Gender = 0,
+          Gender = gender,
           Surname = fio?[0],
           Name = fio?.Length >= 2 ? fio[1] : "",
           Patronymic = fio?.Length >= 3 ? fio[2] : "",

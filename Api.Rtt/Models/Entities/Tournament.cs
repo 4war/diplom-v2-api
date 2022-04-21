@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Api.Rtt.Models.Entities
 {
@@ -27,6 +29,9 @@ namespace Api.Rtt.Models.Entities
         [ForeignKey("Qualification")] public int? QualificationId { get; set; }
 
         public int NumberOfQualificationWinners { get; set; }
+
+        [JsonIgnore]
+        public virtual List<Player> Players { get; set; }  = new List<Player>();
     }
 
     public enum Stage

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "T3mcAhgTJvXE7ECxSeTICgWP0q6cvwny2RsuBWi2s0EGryo66yovLFa3hXdCncbYetsMDvQC8nIQCfKYft+bgQ==",
+  "dgSpecHash": "7UnRDA4kkpNtRPaGmFlOeigY6Z6poHqtOk83p3+xZ6hEf53u3gK+N5C3OfDKjd/E7x/TlFEEUgh5P6Hwd7upxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Api.Rtt.Test\\Api.Rtt.Test.csproj",
   "expectedPackageFiles": [
@@ -66,6 +66,7 @@
     "C:\\Users\\fedro\\.nuget\\packages\\microsoft.testplatform.testhost\\16.9.4\\microsoft.testplatform.testhost.16.9.4.nupkg.sha512",
     "C:\\Users\\fedro\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\fedro\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\fedro\\.nuget\\packages\\moq\\4.17.2\\moq.4.17.2.nupkg.sha512",
     "C:\\Users\\fedro\\.nuget\\packages\\morelinq\\3.3.2\\morelinq.3.3.2.nupkg.sha512",
     "C:\\Users\\fedro\\.nuget\\packages\\mysql.data\\8.0.23\\mysql.data.8.0.23.nupkg.sha512",
     "C:\\Users\\fedro\\.nuget\\packages\\mysql.entityframeworkcore\\5.0.0\\mysql.entityframeworkcore.5.0.0.nupkg.sha512",
@@ -144,7 +145,7 @@
     "C:\\Users\\fedro\\.nuget\\packages\\system.text.regularexpressions\\4.3.0\\system.text.regularexpressions.4.3.0.nupkg.sha512",
     "C:\\Users\\fedro\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\fedro\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\fedro\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
+    "C:\\Users\\fedro\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\fedro\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
     "C:\\Users\\fedro\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\fedro\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",

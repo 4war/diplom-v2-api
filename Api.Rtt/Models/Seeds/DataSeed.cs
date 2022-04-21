@@ -35,14 +35,14 @@ namespace Api.Rtt.Models.Seeds
       if (!_context.TennisCenters.Any())
         SeedTennisCenters();
 
-      if (!_context.Tournaments.Any())
-        SeedTournaments();
-
       if (!_context.Players.Any())
         SeedPlayers();
 
-      if (!_context.PlayerTournaments.Any())
+      if (!_context.Tournaments.Any())
+      {
+        SeedTournaments();
         SeedPlayerTournament();
+      }
     }
 
     private void SeedCities()
@@ -98,7 +98,7 @@ namespace Api.Rtt.Models.Seeds
       var list = _playerTournamentSeed.GetList();
       foreach (var playerTournament in list)
       {
-        _context.PlayerTournaments.Add(playerTournament);
+        _context.Tournaments.Update(playerTournament);
       }
 
       _context.SaveChanges();

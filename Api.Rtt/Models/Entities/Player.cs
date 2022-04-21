@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Api.Rtt.Models.Entities
 {
@@ -17,5 +19,8 @@ namespace Api.Rtt.Models.Entities
     public string City { get; set; }
     public int Point { get; set; }
     public int Gender { get; set; }
+
+    [JsonIgnore]
+    public virtual List<Tournament> Tournaments { get; set; } = new List<Tournament>();
   }
 }

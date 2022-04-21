@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Api.Rtt.Excel;
-using Api.Rtt.Models.Entities.ManyWithMany;
+using Api.Rtt.Models.Entities;
 
 namespace Api.Rtt.Models.Seeds
 {
@@ -13,7 +13,7 @@ namespace Api.Rtt.Models.Seeds
       _context = context;
     }
 
-    public List<PlayerTournament> GetList()
+    public List<Tournament> GetList()
     {
       var playerTournamentReader = new PlayerTournamentReader(_context);
       var result = playerTournamentReader.Copy();
