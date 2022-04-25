@@ -21,9 +21,16 @@ namespace Api.Rtt.Controllers
     public IActionResult Get([FromRoute] int id)
     {
       var playerList = _context.Tournaments
-        .Find(id).Players;
+        .FirstOrDefault(x => x.Id == id);
 
-      return Ok(playerList);
+      if (playerList is null)
+        return NotFound();
+
+      var result = playerList.Players
+        .OrderByDescending(x => x.Point)
+        .AsQueryable();
+
+      return Ok(result);
     }
   }
 }

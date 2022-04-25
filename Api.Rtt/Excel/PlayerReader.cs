@@ -14,7 +14,6 @@ namespace Api.Rtt.Excel
   {
     public List<Player> Copy()
     {
-      //todo: also get Female list
       var directory = Directory.GetParent(Environment.CurrentDirectory)?.FullName;
 
       if (directory is null)

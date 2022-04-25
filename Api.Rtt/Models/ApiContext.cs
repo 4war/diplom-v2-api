@@ -27,5 +27,7 @@ namespace Api.Rtt.Models
     public DbSet<Player> Players { get; set; }
 
     public DbSet<City> Cities { get; set; }
+
+    public DbSet<Match> Matches { get; set; }
   }
 }

@@ -9,56 +9,60 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Api.Rtt.Controllers
 {
-    [Route("api/[controller]")]
-    public class TournamentController : Controller
+  [Route("api/[controller]")]
+  public class TournamentController : Controller
+  {
+    private readonly ApiContext _context;
+
+    public TournamentController(ApiContext context)
     {
-        private readonly ApiContext _context;
-        public TournamentController(ApiContext context)
-        {
-            _context = context;
-        }
-        
-        [HttpGet(Name = "GetTournaments")]
-        public IEnumerable<Tournament> Get()
-        {
-            return _context.Tournaments.OrderBy(x => x.DateStart).ToList();
-        }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get([FromRoute] int id)
-        {
-            var tournament = await _context.Tournaments.SingleOrDefaultAsync(x => x.Id == id);
-
-            if (tournament is null)
-            {
-                return NotFound();
-            }
-
-            return Ok(tournament);
-        }
-
-        [HttpPost]
-        public IActionResult Post([FromBody] Tournament tournament)
-        {
-            if (tournament is null)
-            {
-                return BadRequest();
-            }
-
-            var factory = new TournamentFactory(tournament)
-            {
-                Ages = new List<int>() { tournament.Age },
-                HasQualification = true,
-            };
-
-            var list = factory.Generate();
-            foreach (var t in list)
-            {
-                _context.Tournaments.Add(t);
-            }
-           
-            _context.SaveChanges();
-            return RedirectToAction("Get");
-        }
+      _context = context;
     }
+
+    [HttpGet(Name = "GetAllTournaments")]
+    public IEnumerable<Tournament> Get()
+    {
+      return _context.Tournaments
+        //.Where(x => x.Stage == (int)Stage.Main)
+        .OrderBy(x => x.DateStart)
+        .AsQueryable();
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get([FromRoute] int id)
+    {
+      var tournament = await _context.Tournaments.SingleOrDefaultAsync(x => x.Id == id);
+
+      if (tournament is null)
+      {
+        return NotFound();
+      }
+
+      return Ok(tournament);
+    }
+
+    [HttpPost]
+    public IActionResult Post([FromBody] Tournament tournament)
+    {
+      if (tournament is null)
+      {
+        return BadRequest();
+      }
+
+      var factory = new TournamentFactory(tournament)
+      {
+        Ages = new List<int>() { tournament.Age },
+        HasQualification = true,
+      };
+
+      var list = factory.Generate();
+      foreach (var t in list)
+      {
+        _context.Tournaments.Add(t);
+      }
+
+      _context.SaveChanges();
+      return RedirectToAction("Get");
+    }
+  }
 }

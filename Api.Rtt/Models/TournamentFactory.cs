@@ -35,11 +35,11 @@ namespace Api.Rtt.Models
             NumberOfQualificationWinners = tournament.NetRange / 8;
             DateStart = tournament.DateStart;
         }
-        
+
         public TournamentFactory()
         {
         }
-        
+
         public List<Tournament> Generate()
         {
             var list = new List<Tournament>();
@@ -59,7 +59,7 @@ namespace Api.Rtt.Models
                     {
                         mainTournament.Qualification = qualificationTournament;
                     }
-                    
+
                     list.Add(mainTournament);
                 }
             }
@@ -72,7 +72,7 @@ namespace Api.Rtt.Models
         {
             var tournament = GenerateBasedTournament(gender, age);
             tournament.Stage = (int)Stage.Main;
-            
+
             return tournament;
         }
 
