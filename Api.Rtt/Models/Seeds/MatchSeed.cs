@@ -23,13 +23,12 @@ namespace Api.Rtt.Models.Seeds
 
       var match = new Match()
       {
-        Player1 = player1,
-        Player2 = player2,
-        Winner = winner,
-        Tournament = tournament,
+        // Player1 = player1,
+        // Player2 = player2,
+        // Winner = winner,
         Score = "64 64",
-        Duration= new TimeSpan(days: 0, hours: 1, minutes: 40, seconds: 0),
-        Start = tournament.DateEnd,
+        // Duration = DateTime.Now,
+        // Start = tournament.DateEnd,
       };
 
       return new List<Match>() { match };

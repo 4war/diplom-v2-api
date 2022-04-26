@@ -19,7 +19,7 @@ namespace Api.Rtt.Controllers
       _context = context;
     }
 
-    [HttpGet(Name = "GetAllTournaments")]
+    [HttpGet]
     public IEnumerable<Tournament> Get()
     {
       return _context.Tournaments

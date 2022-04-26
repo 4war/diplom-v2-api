@@ -21,6 +21,9 @@ namespace Api.Rtt.Models.Entities
         public DateTime DateRequest { get; set; }
         public int NetRange { get; set; }
 
+        [JsonIgnore]
+        public virtual Bracket Bracket { get; set; }
+
         public virtual TennisCenter TennisCenter { get; set; }
 
         [ForeignKey("TennisCenter")] public int TennisCenterId { get; set; }

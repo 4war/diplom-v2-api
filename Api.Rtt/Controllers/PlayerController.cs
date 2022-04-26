@@ -1,4 +1,5 @@
-﻿using Api.Rtt.Models;
+﻿using System.Linq;
+using Api.Rtt.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Rtt.Controllers
@@ -16,7 +17,7 @@ namespace Api.Rtt.Controllers
     [HttpGet]
     public IActionResult Get()
     {
-      return Ok(_context.Players);
+      return Ok(_context.Players.Take(40));
     }
 
     [HttpGet("{rni}")]

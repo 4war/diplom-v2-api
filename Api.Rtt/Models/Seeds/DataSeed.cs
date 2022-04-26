@@ -14,6 +14,7 @@ namespace Api.Rtt.Models.Seeds
     private readonly CitySeed _citySeed;
     private readonly PlayerTournamentSeed _playerTournamentSeed;
     private readonly MatchSeed _matchSeed;
+    private readonly BracketSeed _bracketSeed;
 
     public DataSeed(ApiContext apiContext)
     {
@@ -24,6 +25,7 @@ namespace Api.Rtt.Models.Seeds
       _tennisCenterSeed = new TennisCenterSeed(apiContext);
       _citySeed = new CitySeed(apiContext);
       _matchSeed = new MatchSeed(apiContext);
+      _bracketSeed = new BracketSeed(apiContext);
     }
 
     public void SeedData()
@@ -48,6 +50,9 @@ namespace Api.Rtt.Models.Seeds
 
       if (!_context.Matches.Any())
         SeedMatches();
+
+      if (!_context.Brackets.Any())
+        SeedBrackets();
     }
 
     private void SeedCities()
@@ -116,6 +121,16 @@ namespace Api.Rtt.Models.Seeds
       {
         _context.Matches.Add(match);
       }
+
+      _context.SaveChanges();
+    }
+
+    private void SeedBrackets()
+    {
+      var list = _bracketSeed.GetList();
+
+      foreach (var bracket in list)
+        _context.Brackets.Add(bracket);
 
       _context.SaveChanges();
     }
