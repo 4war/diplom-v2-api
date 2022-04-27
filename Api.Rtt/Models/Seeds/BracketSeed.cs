@@ -286,6 +286,7 @@ namespace Api.Rtt.Models.Seeds
                   Player2 = null, //Мартышков
                   Score = "64 46 63",
                   Winner = _context.Players.Find(32007),
+                  PlaceInRound = 0,
                 }
               }
             }
@@ -296,9 +297,8 @@ namespace Api.Rtt.Models.Seeds
       foreach (var bracket in result)
       {
         foreach (var round in bracket.Rounds)
-        {
-          round.Matches.Reverse();
-        }
+          for (var i = 0; i < round.Matches.Count; i++)
+            round.Matches[i].PlaceInRound = i;
 
         bracket.Rounds = bracket.Rounds.OrderBy(x => x.Stage).ToList();
       }

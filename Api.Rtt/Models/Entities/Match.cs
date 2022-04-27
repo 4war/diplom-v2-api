@@ -43,5 +43,8 @@ namespace Api.Rtt.Models.Entities
 
     [JsonProperty("start")]
      public string Score { get; set; }
+
+     [JsonProperty("placeInRound")]
+     public int PlaceInRound { get; set; }
   }
 }

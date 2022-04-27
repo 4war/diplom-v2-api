@@ -20,8 +20,15 @@ namespace Api.Rtt.Controllers
     [HttpGet("{id}")]
     public IActionResult Get([FromRoute] int id)
     {
-      var result = _context.Brackets.FirstOrDefault(x => x.TournamentId == id);
-      return result is null ? NotFound() : Ok(result);
+      var bracket = _context.Brackets.FirstOrDefault(x => x.TournamentId == id);
+
+      if (bracket is null)
+        return NotFound();
+
+      foreach (var round in bracket.Rounds)
+        round.Matches = round.Matches.OrderBy(m => m.PlaceInRound).ToList();
+
+      return Ok(bracket);
     }
   }
 }

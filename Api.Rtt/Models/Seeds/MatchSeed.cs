@@ -15,6 +15,8 @@ namespace Api.Rtt.Models.Seeds
 
     public List<Match> GetList()
     {
+      return new List<Match>();
+
       var player1 = _context.Players.Find(40092);
       var player2 = _context.Players.Find(40014);
 
