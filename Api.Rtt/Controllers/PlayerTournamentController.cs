@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Rtt.Models;
+using Api.Rtt.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,6 +32,24 @@ namespace Api.Rtt.Controllers
         .AsQueryable();
 
       return Ok(result);
+    }
+
+    [HttpPost("{id}")]
+    public IActionResult Post([FromRoute] int id, [FromBody] Player player)
+    {
+      var tournament = _context.Tournaments.FirstOrDefault(x => x.Id == id);
+      if (tournament is null)
+      {
+        return NotFound();
+      }
+
+      if (tournament.Players.FirstOrDefault(x => x.Rni == player.Rni) is not null)
+      {
+        return BadRequest();
+      }
+
+      tournament.Players.Add(player);
+      return Ok(player);
     }
   }
 }

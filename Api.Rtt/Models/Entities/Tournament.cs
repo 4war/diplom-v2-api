@@ -34,7 +34,7 @@ namespace Api.Rtt.Models.Entities
         public int NumberOfQualificationWinners { get; set; }
 
         [JsonIgnore]
-        public virtual List<Player> Players { get; set; }  = new List<Player>();
+        public virtual List<Player> Players { get; set; }  = new();
     }
 
     public enum Stage

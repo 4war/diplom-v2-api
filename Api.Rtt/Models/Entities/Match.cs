@@ -30,8 +30,8 @@ namespace Api.Rtt.Models.Entities
     [JsonProperty("start")]
     public DateTime Start { get; set; } = DateTime.Today;
 
-    [JsonProperty("duration")]
-    public DateTime Duration { get; set; } = DateTime.Now;
+    [JsonProperty("end")]
+    public DateTime End { get; set; } = DateTime.Now;
 
     [ForeignKey("Winner")]
     [JsonProperty("winnerId")]

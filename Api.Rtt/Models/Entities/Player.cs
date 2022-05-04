@@ -21,6 +21,6 @@ namespace Api.Rtt.Models.Entities
     public int Gender { get; set; }
 
     [JsonIgnore]
-    public virtual List<Tournament> Tournaments { get; set; } = new List<Tournament>();
+    public virtual List<Tournament> Tournaments { get; set; } = new();
   }
 }

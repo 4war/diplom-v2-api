@@ -1,6 +1,9 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
+using Api.Rtt.Filter;
 using Api.Rtt.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api.Rtt.Controllers
 {
@@ -18,6 +21,31 @@ namespace Api.Rtt.Controllers
     public IActionResult Get()
     {
       return Ok(_context.Players.Take(40));
+    }
+
+    [HttpPost("filter")]
+    public async Task<IActionResult> GetFilteredList([FromBody] PlayerFilterOptions filterOptions)
+    {
+      var list = await _context.Players.ToListAsync();
+      var queryable = list
+        .Where(x => x.Surname.ToLower().StartsWith(filterOptions.StartWith.ToLower()));
+
+      if (filterOptions.Skip.HasValue)
+      {
+        queryable = queryable.Skip(filterOptions.Skip.Value);
+      }
+
+      if (filterOptions.Take.HasValue)
+      {
+        queryable = queryable.Take(filterOptions.Take.Value);
+      }
+
+      if (!queryable.Any())
+      {
+        return NotFound();
+      }
+
+      return Ok(queryable);
     }
 
     [HttpGet("{rni}")]
