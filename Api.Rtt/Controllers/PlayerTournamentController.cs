@@ -18,7 +18,7 @@ namespace Api.Rtt.Controllers
       _context = context;
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id:int}")]
     public IActionResult Get([FromRoute] int id)
     {
       var playerList = _context.Tournaments
@@ -34,7 +34,7 @@ namespace Api.Rtt.Controllers
       return Ok(result);
     }
 
-    [HttpPost("{id}")]
+    [HttpPost("{id:int}")]
     public IActionResult Post([FromRoute] int id, [FromBody] Player player)
     {
       var tournament = _context.Tournaments.FirstOrDefault(x => x.Id == id);
@@ -49,6 +49,27 @@ namespace Api.Rtt.Controllers
       }
 
       tournament.Players.Add(player);
+      _context.SaveChanges();
+      return Ok(player);
+    }
+
+    [HttpDelete("{idTournament:int}/{rni:int}")]
+    public IActionResult Post([FromRoute] int idTournament, [FromRoute] int rni)
+    {
+      var tournament = _context.Tournaments.FirstOrDefault(x => x.Id == idTournament);
+      if (tournament is null)
+      {
+        return NotFound();
+      }
+
+      var player = tournament.Players.FirstOrDefault(x => x.Rni == rni);
+      if (player is null)
+      {
+        return NotFound();
+      }
+
+      tournament.Players.Remove(player);
+      _context.SaveChanges();
       return Ok(player);
     }
   }
