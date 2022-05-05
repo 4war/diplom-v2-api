@@ -18,6 +18,22 @@ namespace Api.Rtt.Models
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       base.OnModelCreating(modelBuilder);
+
+      modelBuilder.Entity<Tournament>()
+        .HasOne(a => a.Bracket)
+        .WithOne(b => b.Tournament)
+        .HasForeignKey<Bracket>(e => e.TournamentId)
+        .OnDelete(DeleteBehavior.Cascade);
+
+      modelBuilder.Entity<Round>()
+        .HasOne(r => r.Bracket)
+        .WithMany(b => b.Rounds)
+        .OnDelete(DeleteBehavior.Cascade);
+
+      modelBuilder.Entity<Match>()
+        .HasOne(m => m.Round)
+        .WithMany(r => r.Matches)
+        .OnDelete(DeleteBehavior.Cascade);
     }
 
     public DbSet<Tournament> Tournaments { get; set; }

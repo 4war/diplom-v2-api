@@ -57,10 +57,9 @@ namespace Api.Rtt.Models.Seeds
 
     private void SeedCities()
     {
-      foreach (var city in _context.Cities)
-      {
-        _context.Cities.Add(city);
-      }
+      _context.Cities.Add(new City(){Name = "Самара"});
+      _context.Cities.Add(new City(){Name = "Тольятти"});
+
 
       _context.SaveChanges();
     }

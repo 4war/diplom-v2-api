@@ -12,5 +12,11 @@ namespace Api.Rtt.Filter
 
     [JsonProperty("take")]
     public int? Take { get; set; }
+
+    [JsonProperty("city")]
+    public string City { get; set; }
+
+    [JsonProperty("gender")]
+    public int Gender { get; set; }
   }
 }

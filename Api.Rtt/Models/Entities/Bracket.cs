@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Newtonsoft.Json;
 
 namespace Api.Rtt.Models.Entities
 {
@@ -11,9 +10,9 @@ namespace Api.Rtt.Models.Entities
     [ForeignKey("Tournament"), Key]
     public int TournamentId { get; set; }
 
-    [JsonIgnore]
+    [System.Text.Json.Serialization.JsonIgnore]
     public virtual Tournament Tournament { get; set; }
 
-    public virtual List<Round> Rounds { get; set; }
+    public virtual List<Round> Rounds { get; set; } = new List<Round>();
   }
 }

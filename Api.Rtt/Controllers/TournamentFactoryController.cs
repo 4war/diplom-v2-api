@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Api.Rtt.Helpers;
 using Api.Rtt.Models;
 using Api.Rtt.Models.Entities;
 using Api.Rtt.Models.Seeds;
@@ -14,6 +15,7 @@ namespace Api.Rtt.Controllers
   public class TournamentFactoryController : Controller
   {
     private readonly ApiContext _context;
+    private readonly BracketBuilder _bracketBuilder = new();
 
     public TournamentFactoryController(ApiContext context)
     {
@@ -69,12 +71,7 @@ namespace Api.Rtt.Controllers
       if (tournament is null)
         return NotFound();
 
-      var list = _context.Tournaments
-        .Where(x => x.Stage == (int)Stage.Main)
-        .Where(x => x.Name == tournament.Name)
-        .OrderBy(x => x.Gender)
-        .ThenByDescending(x => x.Age)
-        .ToList();
+      var list = GetFactoryAsList(tournament.Name, true);
 
       return Ok(GetTournamentFactoryFromList(list, tournament));
     }
@@ -116,13 +113,13 @@ namespace Api.Rtt.Controllers
         Category = tournament.Category,
         Ages = list.Select(x => x.Age).Distinct().ToList(),
         Genders = list.Select(x => x.Gender).Distinct().ToList(),
-        DateStart = list.First(x => x.QualificationId.HasValue).DateStart,
-        DateEnd = list.First(x => x.QualificationId.HasValue).DateEnd,
-        DateRequest = list.First(x => x.QualificationId.HasValue).DateRequest,
-        HasQualification = list.Any(x => x.QualificationId.HasValue),
-        NetRange = list.First(x => x.QualificationId.HasValue).NetRange,
+        DateStart = list.First(x => x.Stage == (int)Stage.Main).DateStart,
+        DateEnd = list.First(x =>  x.Stage == (int)Stage.Main).DateEnd,
+        DateRequest = list.First(x =>  x.Stage == (int)Stage.Main).DateRequest,
+        HasQualification = list.Any(x =>  x.Stage == (int)Stage.Main),
+        NetRange = list.First(x =>  x.Stage == (int)Stage.Main).NetRange,
         TennisCenter = tournament.TennisCenter,
-        NumberOfQualificationWinners = list.First(x => x.QualificationId.HasValue).NumberOfQualificationWinners,
+        NumberOfQualificationWinners = list.First(x =>  x.Stage == (int)Stage.Main).NumberOfQualificationWinners,
         Tournaments = list,
       };
 
@@ -145,7 +142,36 @@ namespace Api.Rtt.Controllers
       }
 
       _context.SaveChanges();
-      return Ok(_context.Tournaments);
+
+      var bracketList = _bracketBuilder.CreateBracketsForFactory(tf);
+      foreach (var bracket in bracketList)
+      {
+        _context.Brackets.Add(bracket);
+      }
+      _context.SaveChanges();
+
+      return Ok(tf);
+    }
+
+
+    [HttpDelete("{id:int}")]
+    public IActionResult Delete([FromRoute] int id)
+    {
+      var tournament = _context.Tournaments.FirstOrDefault(x => x.Id == id);
+      if (tournament is null)
+      {
+        return NotFound();
+      }
+
+      var list = GetFactoryAsList(tournament.Name, false);
+      var factory = GetTournamentFactoryFromList(list, tournament);
+      foreach (var t in factory.Tournaments.ToList())
+      {
+        _context.Tournaments.Remove(t);
+      }
+
+      _context.SaveChanges();
+      return Ok(factory);
     }
   }
 }

@@ -13,12 +13,18 @@ namespace Api.Rtt.Models.Entities
     public int Id { get; set; }
 
     [JsonProperty("matches")]
-    public virtual List<Match> Matches { get; set; }
+    public virtual List<Match> Matches { get; set; } = new List<Match>();
 
     [JsonProperty("type")]
     public string Type { get; set; }
 
     [JsonProperty("stage")]
     public int Stage { get; set; }
+
+    [System.Text.Json.Serialization.JsonIgnore]
+    public virtual Bracket Bracket { get; set; }
+
+    [JsonProperty("bracketId"), ForeignKey("Bracket")]
+    public int BracketId { get; set; }
   }
 }

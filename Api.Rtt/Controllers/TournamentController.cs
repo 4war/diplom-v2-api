@@ -23,7 +23,6 @@ namespace Api.Rtt.Controllers
     public IEnumerable<Tournament> Get()
     {
       return _context.Tournaments
-        //.Where(x => x.Stage == (int)Stage.Main)
         .OrderBy(x => x.DateStart)
         .AsQueryable();
     }
@@ -32,7 +31,6 @@ namespace Api.Rtt.Controllers
     public async Task<IActionResult> Get([FromRoute] int id)
     {
       var tournament = await _context.Tournaments.SingleOrDefaultAsync(x => x.Id == id);
-
       if (tournament is null)
       {
         return NotFound();

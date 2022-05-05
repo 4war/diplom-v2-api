@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Api.Rtt.Models.Entities
 {
@@ -41,10 +42,16 @@ namespace Api.Rtt.Models.Entities
     public virtual Player Winner { get; set; }
 
 
-    [JsonProperty("start")]
+    [JsonProperty("score")]
      public string Score { get; set; }
 
      [JsonProperty("placeInRound")]
      public int PlaceInRound { get; set; }
+
+     [System.Text.Json.Serialization.JsonIgnore]
+     public virtual Round Round { get; set; }
+
+     [JsonProperty("roundId"), ForeignKey("Round")]
+     public int RoundId { get; set; }
   }
 }
