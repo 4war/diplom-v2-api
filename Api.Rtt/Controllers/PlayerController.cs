@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Api.Rtt.Filter;
 using Api.Rtt.Models;
@@ -28,7 +29,9 @@ namespace Api.Rtt.Controllers
     {
       var list = await _context.Players.ToListAsync();
       var queryable = list
-        .Where(x => x.Surname.ToLower().StartsWith(filterOptions.StartWith.ToLower()));
+        .Where(x => x.Surname.StartsWith(filterOptions.StartWith, StringComparison.InvariantCultureIgnoreCase))
+        .Where(x => string.IsNullOrEmpty(filterOptions.City) || x.City.StartsWith(filterOptions.City, StringComparison.InvariantCultureIgnoreCase))
+        .Where(x => !filterOptions.Gender.HasValue || x.Gender == filterOptions.Gender);
 
       if (filterOptions.Skip.HasValue)
       {

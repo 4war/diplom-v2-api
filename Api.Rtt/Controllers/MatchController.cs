@@ -38,8 +38,8 @@ namespace Api.Rtt.Controllers
       }
 
       match.WinnerId = match.Winner.Rni;
-      match.PlayerId1 = match.Player1.Rni;
-      match.PlayerId2 = match.Player2.Rni;
+      match.Player1Rni = match.Player1.Rni;
+      match.Player2Rni = match.Player2.Rni;
       _context.Entry(match).State = EntityState.Detached;
       _context.Matches.Update(match);
       _context.SaveChanges();

@@ -19,12 +19,6 @@ namespace Api.Rtt.Models
     {
       base.OnModelCreating(modelBuilder);
 
-      modelBuilder.Entity<Tournament>()
-        .HasOne(a => a.Bracket)
-        .WithOne(b => b.Tournament)
-        .HasForeignKey<Bracket>(e => e.TournamentId)
-        .OnDelete(DeleteBehavior.Cascade);
-
       modelBuilder.Entity<Round>()
         .HasOne(r => r.Bracket)
         .WithMany(b => b.Rounds)

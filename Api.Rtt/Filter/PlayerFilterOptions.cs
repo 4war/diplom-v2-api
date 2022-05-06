@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Api.Rtt.Models.Entities;
+using Newtonsoft.Json;
 
 namespace Api.Rtt.Filter
 {
@@ -17,6 +18,6 @@ namespace Api.Rtt.Filter
     public string City { get; set; }
 
     [JsonProperty("gender")]
-    public int Gender { get; set; }
+    public int? Gender { get; set; }
   }
 }

@@ -15,15 +15,15 @@ namespace Api.Rtt.Models.Entities
     public int Id { get; set; }
 
     [ForeignKey("Player1")]
-    [JsonProperty("playerId1")]
-    public int? PlayerId1 { get; set; }
+    [System.Text.Json.Serialization.JsonIgnore]
+    public int? Player1Rni { get; set; }
 
     [JsonProperty("player1")]
     public virtual Player Player1 { get; set; }
 
     [ForeignKey("Player2")]
-    [JsonProperty("playerId2")]
-    public int? PlayerId2 { get; set; }
+    [System.Text.Json.Serialization.JsonIgnore]
+    public int? Player2Rni { get; set; }
 
     [JsonProperty("player2")]
     public virtual Player Player2 { get; set; }
@@ -35,7 +35,7 @@ namespace Api.Rtt.Models.Entities
     public DateTime End { get; set; } = DateTime.Now;
 
     [ForeignKey("Winner")]
-    [JsonProperty("winnerId")]
+    [System.Text.Json.Serialization.JsonIgnore]
     public int? WinnerId { get; set; }
 
     [JsonProperty("winner")]
