@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api.Rtt.Models.Entities
@@ -11,7 +12,8 @@ namespace Api.Rtt.Models.Entities
 
     public string Name { get; set; }
     public string Address { get; set; }
-
     public string City { get; set; }
+
+    public virtual List<Court> Courts { get; set; } = new ();
   }
 }

@@ -25,137 +25,23 @@ namespace Api.Rtt.Controllers
     [HttpGet]
     public IActionResult Get()
     {
-      var list = _context.Tournaments.ToList();
-      var groups = new Dictionary<string, Dictionary<DateTime, List<Tournament>>>();
-      foreach (var tournament in list)
-      {
-        if (!groups.ContainsKey(tournament.Name))
-          groups[tournament.Name] = new Dictionary<DateTime, List<Tournament>>();
-
-        var firstDate = tournament.DateStart;
-        if (tournament.Qualification is not null)
-          firstDate = tournament.Qualification.DateStart;
-
-        if (!groups[tournament.Name].ContainsKey(firstDate))
-          groups[tournament.Name][firstDate] = new List<Tournament>();
-
-        groups[tournament.Name][firstDate].Add(tournament);
-      }
-
-      var result = groups
-        .Select(d => d.Value
-          .Select(g => new TournamentFactory()
-          {
-            FirstTournamentId = g.Value.First().Id,
-            Name = d.Key,
-            Category = g.Value.First().Category,
-            Ages = g.Value.Select(x => x.Age).Distinct().ToList(),
-            Genders = g.Value.Select(x => x.Gender).Distinct().ToList(),
-            DateStart = g.Value.First(x => x.QualificationId.HasValue).DateStart,
-            DateEnd = g.Value.First(x => x.QualificationId.HasValue).DateEnd,
-            DateRequest = g.Value.First(x => x.QualificationId.HasValue).DateRequest,
-            HasQualification = g.Value.Any(x => x.QualificationId.HasValue),
-            NetRange = g.Value.First(x => x.QualificationId.HasValue).NetRange,
-            TennisCenter = g.Value.First().TennisCenter,
-            NumberOfQualificationWinners =
-              g.Value.First(x => x.QualificationId.HasValue).NumberOfQualificationWinners,
-            Tournaments = g.Value.ToList(),
-          })).SelectMany(m => m).OrderBy(x => x.DateStart).ToList();
-      return Ok(result);
+      return Ok(_context.TournamentFactories.OrderBy(x => x.DateStart));
     }
 
     [HttpGet("{id:int}")]
-    public async Task<IActionResult> Get(int id)
+    public IActionResult Get([FromRoute] int id)
     {
-      var tournament = await _context.Tournaments.FirstOrDefaultAsync(x => x.Id == id);
-      if (tournament is null)
+      var factory = _context.TournamentFactories.FirstOrDefault(x => x.FirstTournamentId == id);
+      if (factory is null)
+      {
         return NotFound();
-
-      var list = GetFactoryAsList(tournament.Name, true);
-
-      return Ok(GetTournamentFactoryFromList(list, tournament));
-    }
-
-    [HttpGet("{id:int}/all")]
-    public async Task<IActionResult> GetAll(int id)
-    {
-      var tournament = await _context.Tournaments.FirstOrDefaultAsync(x => x.Id == id);
-      if (tournament is null)
-        return NotFound();
-
-      var list = GetFactoryAsList(tournament.Name);
-
-      return Ok(GetTournamentFactoryFromList(list, tournament));
-    }
-
-    private List<Tournament> GetFactoryAsList(string name, bool mainOnly = false)
-    {
-      var list = _context.Tournaments
-        .Where(x => x.Name == name)
-        .Where(x => !mainOnly || x.Stage == (int)Stage.Main)
-        .OrderBy(x => x.Gender)
-        .ThenByDescending(x => x.Age)
-        .ToList();
-
-      return list;
-    }
-
-    private TournamentFactory GetTournamentFactoryFromList(List<Tournament> notFilteredList,
-      Tournament tournament)
-    {
-      var list = notFilteredList.Where(x =>
-        x.DateStart.AddDays(-7) < tournament.DateStart && x.DateStart.AddDays(7) > tournament.DateStart).ToList();
-
-      var factory = new TournamentFactory()
-      {
-        FirstTournamentId = tournament.Id,
-        Name = tournament.Name,
-        Category = tournament.Category,
-        Ages = list.Select(x => x.Age).Distinct().ToList(),
-        Genders = list.Select(x => x.Gender).Distinct().ToList(),
-        DateStart = list.First(x => x.Stage == (int)Stage.Main).DateStart,
-        DateEnd = list.First(x =>  x.Stage == (int)Stage.Main).DateEnd,
-        DateRequest = list.First(x =>  x.Stage == (int)Stage.Main).DateRequest,
-        HasQualification = list.Any(x =>  x.Stage == (int)Stage.Main),
-        NetRange = list.First(x =>  x.Stage == (int)Stage.Main).NetRange,
-        TennisCenter = tournament.TennisCenter,
-        NumberOfQualificationWinners = list.First(x =>  x.Stage == (int)Stage.Main).NumberOfQualificationWinners,
-        Tournaments = list,
-      };
-
-      return factory;
-    }
-
-
-    [HttpPost]
-    public IActionResult Post([FromBody] TournamentFactory tf)
-    {
-      if (tf is null)
-      {
-        return BadRequest();
       }
 
-      var list = tf.Generate();
-      foreach (var t in list)
-      {
-        _context.Tournaments.Add(t);
-      }
-
-      _context.SaveChanges();
-
-      var bracketList = _bracketBuilder.CreateBracketsForFactory(tf);
-      foreach (var bracket in bracketList)
-      {
-        _context.Brackets.Add(bracket);
-      }
-      _context.SaveChanges();
-
-      return Ok(tf);
+      return Ok(factory);
     }
 
-
-    [HttpDelete("{id:int}")]
-    public IActionResult Delete([FromRoute] int id)
+    [HttpGet("fromTournament/{id:int}")]
+    public IActionResult GetFromTournament([FromRoute] int id)
     {
       var tournament = _context.Tournaments.FirstOrDefault(x => x.Id == id);
       if (tournament is null)
@@ -163,12 +49,99 @@ namespace Api.Rtt.Controllers
         return NotFound();
       }
 
-      var list = GetFactoryAsList(tournament.Name, false);
-      var factory = GetTournamentFactoryFromList(list, tournament);
-      foreach (var t in factory.Tournaments.ToList())
+      var factory = _context.TournamentFactories.FirstOrDefault(x => x.FirstTournamentId == tournament.Factory.FirstTournamentId);
+      if (factory is null)
       {
-        _context.Tournaments.Remove(t);
+        return NotFound();
       }
+
+      return Ok(factory);
+    }
+
+
+    // private List<Tournament> GetFactoryAsList(string name, bool mainOnly = false)
+    // {
+    //   var list = _context.Tournaments
+    //     .Where(x => x.Name == name)
+    //     .Where(x => !mainOnly || x.Stage == (int)Stage.Main)
+    //     .OrderBy(x => x.Gender)
+    //     .ThenByDescending(x => x.Age)
+    //     .ToList();
+    //
+    //   return list;
+    // }
+    //
+    // private TournamentFactory GetTournamentFactoryFromList(List<Tournament> notFilteredList,
+    //   Tournament tournament)
+    // {
+    //   var list = notFilteredList.Where(x =>
+    //     x.DateStart.AddDays(-7) < tournament.DateStart && x.DateStart.AddDays(7) > tournament.DateStart).ToList();
+    //
+    //   var factory = new TournamentFactory()
+    //   {
+    //     FirstTournamentId = tournament.Id,
+    //     Name = tournament.Name,
+    //     Category = tournament.Category,
+    //     Ages = list.Select(x => x.Age).Distinct().ToList(),
+    //     Genders = list.Select(x => x.Gender).Distinct().ToList(),
+    //     DateStart = list.First(x => x.Stage == (int)Stage.Main).DateStart,
+    //     DateEnd = list.First(x =>  x.Stage == (int)Stage.Main).DateEnd,
+    //     DateRequest = list.First(x =>  x.Stage == (int)Stage.Main).DateRequest,
+    //     HasQualification = list.Any(x =>  x.Stage == (int)Stage.Main),
+    //     NetRange = list.First(x =>  x.Stage == (int)Stage.Main).NetRange,
+    //     TennisCenter = tournament.TennisCenter,
+    //     NumberOfQualificationWinners = list.First(x =>  x.Stage == (int)Stage.Main).NumberOfQualificationWinners,
+    //     Tournaments = list,
+    //   };
+    //
+    //   return factory;
+    // }
+
+
+    [HttpPost]
+    public IActionResult Post([FromBody] TournamentFactory factory)
+    {
+      if (factory is null)
+      {
+        return BadRequest();
+      }
+
+      var list = factory.Generate();
+      foreach (var t in list)
+      {
+        factory.Tournaments.Add(t);
+      }
+
+      _context.TournamentFactories.Add(factory);
+
+      var bracketList = _bracketBuilder.CreateBracketsForFactory(factory);
+      foreach (var bracket in bracketList)
+      {
+        _context.Brackets.Add(bracket);
+      }
+      _context.SaveChanges();
+
+      return Ok(factory);
+    }
+
+
+    [HttpDelete("{id:int}")]
+    public IActionResult Delete([FromRoute] int id)
+    {
+      var factory = _context.TournamentFactories.FirstOrDefault(x => x.FirstTournamentId == id);
+      if (factory is null)
+      {
+        return NotFound();
+      }
+
+      _context.TournamentFactories.Remove(factory);
+
+      // var list = GetFactoryAsList(tournament.Name, false);
+      // var factory = GetTournamentFactoryFromList(list, tournament);
+      // foreach (var t in factory.Tournaments.ToList())
+      // {
+      //   _context.Tournaments.Remove(t);
+      // }
 
       _context.SaveChanges();
       return Ok(factory);

@@ -29,14 +29,14 @@ namespace Api.Rtt.Models.Entities
     public virtual Player Player2 { get; set; }
 
     [JsonProperty("start")]
-    public DateTime Start { get; set; } = DateTime.Today;
+    public DateTime? Start { get; set; }
 
     [JsonProperty("end")]
-    public DateTime End { get; set; } = DateTime.Now;
+    public DateTime? End { get; set; }
 
     [ForeignKey("Winner")]
     [System.Text.Json.Serialization.JsonIgnore]
-    public int? WinnerId { get; set; }
+    public int? WinnerRni { get; set; }
 
     [JsonProperty("winner")]
     public virtual Player Winner { get; set; }

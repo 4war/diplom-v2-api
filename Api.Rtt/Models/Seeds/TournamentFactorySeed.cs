@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Api.Rtt.Models.Entities;
 
 namespace Api.Rtt.Models.Seeds
 {
@@ -24,7 +25,7 @@ namespace Api.Rtt.Models.Seeds
         TennisCenter = _context.TennisCenters.First(x => x.Name == "ДЮСШ №1"),
         NumberOfQualificationWinners = 4,
         DateStart = new DateTime(2022, 1, 3),
-        Ages = new List<int>() { 14 },
+        Ages = string.Join(" ", new List<int>() { 14 }),
         HasQualification = true,
       });
 
@@ -35,7 +36,7 @@ namespace Api.Rtt.Models.Seeds
         TennisCenter = _context.TennisCenters.First(x => x.Id == 4),
         NumberOfQualificationWinners = 4,
         DateStart = new DateTime(2021, 1, 6),
-        Ages = new List<int>() { 12, 16 },
+        Ages = string.Join(" ", new List<int>() { 12, 16 }),
         HasQualification = true,
       });
 
@@ -46,7 +47,7 @@ namespace Api.Rtt.Models.Seeds
         TennisCenter = _context.TennisCenters.First(x => x.Id == 1),
         NumberOfQualificationWinners = 4,
         DateStart = new DateTime(2021, 1, 12),
-        Ages = new List<int>() { 12 },
+        Ages = string.Join(" ", new List<int>() { 12 }),
         HasQualification = true,
       });
 
@@ -57,7 +58,7 @@ namespace Api.Rtt.Models.Seeds
         TennisCenter = _context.TennisCenters.First(x => x.Id == 1),
         NumberOfQualificationWinners = 4,
         DateStart = new DateTime(2021, 1, 19),
-        Ages = new List<int>() { 14 },
+        Ages = string.Join(" ", new List<int>() { 14 }),
         HasQualification = true,
       });
 
@@ -68,7 +69,7 @@ namespace Api.Rtt.Models.Seeds
         TennisCenter = _context.TennisCenters.First(x => x.Id == 4),
         NumberOfQualificationWinners = 4,
         DateStart = new DateTime(2021, 1, 25),
-        Ages = new List<int>() { 18 },
+        Ages = string.Join(" ", new List<int>() { 18 }),
         HasQualification = true,
       });
 
@@ -79,7 +80,7 @@ namespace Api.Rtt.Models.Seeds
         TennisCenter = _context.TennisCenters.First(x => x.Id == 4),
         NumberOfQualificationWinners = 4,
         DateStart = new DateTime(2021, 2, 8),
-        Ages = new List<int>() { 12 },
+        Ages = string.Join(" ", new List<int>() { 12 }),
         HasQualification = true,
       });
 
@@ -90,7 +91,7 @@ namespace Api.Rtt.Models.Seeds
         TennisCenter = _context.TennisCenters.First(x => x.Id == 1),
         NumberOfQualificationWinners = 4,
         DateStart = new DateTime(2021, 2, 23),
-        Ages = new List<int>() { 14 },
+        Ages = string.Join(" ", new List<int>() { 14 }),
         HasQualification = true,
       });
 
@@ -101,7 +102,7 @@ namespace Api.Rtt.Models.Seeds
         TennisCenter = _context.TennisCenters.First(x => x.Id == 4),
         NumberOfQualificationWinners = 4,
         DateStart = new DateTime(2021, 3, 22),
-        Ages = new List<int>() { 16 },
+        Ages = string.Join(" ", new List<int>() { 16 }),
         HasQualification = true,
       });
 
@@ -112,7 +113,7 @@ namespace Api.Rtt.Models.Seeds
         TennisCenter = _context.TennisCenters.First(x => x.Id == 1),
         NumberOfQualificationWinners = 4,
         DateStart = new DateTime(2021, 3, 22),
-        Ages = new List<int>() { 12 },
+        Ages = string.Join(" ", new List<int>() { 12 }),
         HasQualification = true,
       });
 
@@ -123,7 +124,7 @@ namespace Api.Rtt.Models.Seeds
         TennisCenter = _context.TennisCenters.First(x => x.Id == 1),
         NumberOfQualificationWinners = 4,
         DateStart = new DateTime(2021, 5, 4),
-        Ages = new List<int>() { 12 },
+        Ages = string.Join(" ", new List<int>() { 12 }),
         HasQualification = true,
       });
 
@@ -134,7 +135,7 @@ namespace Api.Rtt.Models.Seeds
         TennisCenter = _context.TennisCenters.First(x => x.Id == 1),
         NumberOfQualificationWinners = 4,
         DateStart = new DateTime(2021, 5, 11),
-        Ages = new List<int>() { 16 },
+        Ages = string.Join(" ", new List<int>() { 16 }),
         HasQualification = true,
       });
 
@@ -142,4 +143,3 @@ namespace Api.Rtt.Models.Seeds
     }
   }
 }
-

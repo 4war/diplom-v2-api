@@ -117,7 +117,7 @@ namespace Api.Rtt.Controllers
       {
         if (match.Player1 is not null) match.Player1Rni = match.Player1.Rni;
         if (match.Player2 is not null) match.Player2Rni = match.Player2.Rni;
-        if (match.Winner is not null) match.WinnerId = match.Winner.Rni;
+        if (match.Winner is not null) match.WinnerRni = match.Winner.Rni;
         _context.Entry(match).State = EntityState.Modified;
         _context.Matches.Update(match);
         _context.SaveChanges();
@@ -127,6 +127,40 @@ namespace Api.Rtt.Controllers
       _context.Brackets.Update(bracket);
       _context.SaveChanges();
       return Ok(bracket);
+    }
+
+    [HttpPatch("move")]
+    public IActionResult MoveWinnerInBracket([FromBody] Match wonMatch)
+    {
+      var wonRound = _context.Rounds.FirstOrDefault(x => x.Id == wonMatch.RoundId);
+      if (wonRound is null) return BadRequest();
+
+      if (wonRound.Type == "Final") throw new NotImplementedException();
+
+      var nextRound = wonRound.Bracket.Rounds.FirstOrDefault(x => x.Stage == wonRound.Stage / 2);
+      if (nextRound is null) throw new NotImplementedException();
+
+      var nextMatchOrder = wonMatch.PlaceInRound / 2;
+      var nextMatch = nextRound.Matches.FirstOrDefault(x => x.PlaceInRound == nextMatchOrder);
+      if (nextMatch is null) throw new NotImplementedException();
+
+      var playerPositionInMatch = wonMatch.PlaceInRound % 2;
+
+      switch (playerPositionInMatch)
+      {
+        case 0:
+          nextMatch.Player1 = wonMatch.Winner;
+          nextMatch.Player1Rni = wonMatch.Winner.Rni;
+          break;
+        case 1:
+          nextMatch.Player2 = wonMatch.Winner;
+          nextMatch.Player2Rni = wonMatch.Winner.Rni;
+          break;
+      }
+
+      _context.Matches.Update(nextMatch);
+      _context.SaveChanges();
+      return Ok();
     }
   }
 }

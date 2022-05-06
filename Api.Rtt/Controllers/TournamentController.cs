@@ -38,29 +38,5 @@ namespace Api.Rtt.Controllers
 
       return Ok(tournament);
     }
-
-    [HttpPost]
-    public IActionResult Post([FromBody] Tournament tournament)
-    {
-      if (tournament is null)
-      {
-        return BadRequest();
-      }
-
-      var factory = new TournamentFactory(tournament)
-      {
-        Ages = new List<int>() { tournament.Age },
-        HasQualification = true,
-      };
-
-      var list = factory.Generate();
-      foreach (var t in list)
-      {
-        _context.Tournaments.Add(t);
-      }
-
-      _context.SaveChanges();
-      return RedirectToAction("Get");
-    }
   }
 }

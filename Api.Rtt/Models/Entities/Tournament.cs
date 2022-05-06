@@ -36,6 +36,12 @@ namespace Api.Rtt.Models.Entities
 
     [System.Text.Json.Serialization.JsonIgnore]
     public virtual List<Player> Players { get; set; } = new();
+
+    [System.Text.Json.Serialization.JsonIgnore]
+    public virtual TournamentFactory Factory { get; set; }
+
+    [ForeignKey("Factory")]
+    public int FactoryId { get; set; }
   }
 
   public enum Stage

@@ -31,6 +31,7 @@ namespace Api.Rtt.Models
     }
 
     public DbSet<Tournament> Tournaments { get; set; }
+    public DbSet<TournamentFactory> TournamentFactories { get; set; }
 
     public DbSet<TennisCenter> TennisCenters { get; set; }
 

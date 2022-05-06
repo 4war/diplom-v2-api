@@ -37,9 +37,9 @@ namespace Api.Rtt.Controllers
         return BadRequest();
       }
 
-      match.WinnerId = match.Winner.Rni;
-      match.Player1Rni = match.Player1.Rni;
-      match.Player2Rni = match.Player2.Rni;
+      if (match.Winner is not null) match.WinnerRni = match.Winner.Rni;
+      if (match.Player1 is not null) match.Player1Rni = match.Player1.Rni;
+      if (match.Player2 is not null) match.Player2Rni = match.Player2.Rni;
       _context.Entry(match).State = EntityState.Detached;
       _context.Matches.Update(match);
       _context.SaveChanges();

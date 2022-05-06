@@ -30,7 +30,7 @@ namespace Api.Rtt.Models.Seeds
 
     public void SeedData()
     {
-      //_context.Database.EnsureDeleted();
+      _context.Database.EnsureDeleted();
       _context.Database.EnsureCreated();
 
       if (!_context.Cities.Any())
@@ -81,10 +81,8 @@ namespace Api.Rtt.Models.Seeds
       {
         factory.SetDate();
         var result = factory.Generate();
-        foreach (var tournament in result)
-        {
-          _context.Tournaments.Add(tournament);
-        }
+        factory.Tournaments = result;
+        _context.TournamentFactories.Add(factory);
       }
 
       _context.SaveChanges();
