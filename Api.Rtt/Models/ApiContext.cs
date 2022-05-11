@@ -42,6 +42,9 @@ namespace Api.Rtt.Models
     public DbSet<Match> Matches { get; set; }
 
     public DbSet<Bracket> Brackets { get; set; }
+
     public DbSet<Round> Rounds { get; set; }
+
+    public DbSet<Schedule> Schedules { get; set; }
   }
 }

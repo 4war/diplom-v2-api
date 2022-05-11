@@ -56,19 +56,7 @@ namespace Api.Rtt.Controllers
       var bracket = _context.Brackets.FirstOrDefault(x => x.TournamentId == id);
       if (bracket is null) return NotFound();
 
-      var hashSet = new HashSet<int>();
-      var result = new List<Player>();
-      foreach (var round in bracket.Rounds)
-      foreach (var match in round.Matches)
-      foreach (var player in new List<Player>() { match.Player1, match.Player2 })
-        if (player is not null)
-          if (!hashSet.Contains(player.Rni))
-          {
-            result.Add(player);
-            hashSet.Add(player.Rni);
-          }
-
-      return Ok(result);
+      return Ok(bracket.Tournament.Players.OrderBy(x => x.Surname));
     }
 
     [HttpGet("{id:int}/missingPlayers")]
@@ -85,7 +73,7 @@ namespace Api.Rtt.Controllers
       var resultListRni = playerListRni.Except(alreadyExistInBracketHashSet);
       var result = resultListRni.Select(x => tournament.Players.First(y => y.Rni == x));
 
-      return Ok(result);
+      return Ok(result.OrderBy(x => x.Surname));
     }
 
 

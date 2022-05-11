@@ -31,7 +31,7 @@ namespace Api.Rtt.Controllers
     [HttpGet("{id:int}")]
     public IActionResult Get([FromRoute] int id)
     {
-      var factory = _context.TournamentFactories.FirstOrDefault(x => x.FirstTournamentId == id);
+      var factory = _context.TournamentFactories.FirstOrDefault(x => x.Id == id);
       if (factory is null)
       {
         return NotFound();
@@ -49,7 +49,7 @@ namespace Api.Rtt.Controllers
         return NotFound();
       }
 
-      var factory = _context.TournamentFactories.FirstOrDefault(x => x.FirstTournamentId == tournament.Factory.FirstTournamentId);
+      var factory = _context.TournamentFactories.FirstOrDefault(x => x.Id == tournament.Factory.Id);
       if (factory is null)
       {
         return NotFound();
@@ -57,45 +57,6 @@ namespace Api.Rtt.Controllers
 
       return Ok(factory);
     }
-
-
-    // private List<Tournament> GetFactoryAsList(string name, bool mainOnly = false)
-    // {
-    //   var list = _context.Tournaments
-    //     .Where(x => x.Name == name)
-    //     .Where(x => !mainOnly || x.Stage == (int)Stage.Main)
-    //     .OrderBy(x => x.Gender)
-    //     .ThenByDescending(x => x.Age)
-    //     .ToList();
-    //
-    //   return list;
-    // }
-    //
-    // private TournamentFactory GetTournamentFactoryFromList(List<Tournament> notFilteredList,
-    //   Tournament tournament)
-    // {
-    //   var list = notFilteredList.Where(x =>
-    //     x.DateStart.AddDays(-7) < tournament.DateStart && x.DateStart.AddDays(7) > tournament.DateStart).ToList();
-    //
-    //   var factory = new TournamentFactory()
-    //   {
-    //     FirstTournamentId = tournament.Id,
-    //     Name = tournament.Name,
-    //     Category = tournament.Category,
-    //     Ages = list.Select(x => x.Age).Distinct().ToList(),
-    //     Genders = list.Select(x => x.Gender).Distinct().ToList(),
-    //     DateStart = list.First(x => x.Stage == (int)Stage.Main).DateStart,
-    //     DateEnd = list.First(x =>  x.Stage == (int)Stage.Main).DateEnd,
-    //     DateRequest = list.First(x =>  x.Stage == (int)Stage.Main).DateRequest,
-    //     HasQualification = list.Any(x =>  x.Stage == (int)Stage.Main),
-    //     NetRange = list.First(x =>  x.Stage == (int)Stage.Main).NetRange,
-    //     TennisCenter = tournament.TennisCenter,
-    //     NumberOfQualificationWinners = list.First(x =>  x.Stage == (int)Stage.Main).NumberOfQualificationWinners,
-    //     Tournaments = list,
-    //   };
-    //
-    //   return factory;
-    // }
 
 
     [HttpPost]
@@ -106,13 +67,18 @@ namespace Api.Rtt.Controllers
         return BadRequest();
       }
 
-      var list = factory.Generate();
+     var list = factory.Generate().ToList();
+
       foreach (var t in list)
       {
-        factory.Tournaments.Add(t);
+        t.Factory = factory;
+        _context.Tournaments.Add(t);
       }
 
+      _context.TennisCenters.Attach(factory.TennisCenter);
+
       _context.TournamentFactories.Add(factory);
+      _context.SaveChanges();
 
       var bracketList = _bracketBuilder.CreateBracketsForFactory(factory);
       foreach (var bracket in bracketList)
@@ -128,20 +94,18 @@ namespace Api.Rtt.Controllers
     [HttpDelete("{id:int}")]
     public IActionResult Delete([FromRoute] int id)
     {
-      var factory = _context.TournamentFactories.FirstOrDefault(x => x.FirstTournamentId == id);
+      var factory = _context.TournamentFactories.FirstOrDefault(x => x.Id == id);
       if (factory is null)
       {
         return NotFound();
       }
 
-      _context.TournamentFactories.Remove(factory);
+      foreach (var tournament in factory.Tournaments.ToList())
+      {
+        _context.Tournaments.Remove(tournament);
+      }
 
-      // var list = GetFactoryAsList(tournament.Name, false);
-      // var factory = GetTournamentFactoryFromList(list, tournament);
-      // foreach (var t in factory.Tournaments.ToList())
-      // {
-      //   _context.Tournaments.Remove(t);
-      // }
+      _context.TournamentFactories.Remove(factory);
 
       _context.SaveChanges();
       return Ok(factory);

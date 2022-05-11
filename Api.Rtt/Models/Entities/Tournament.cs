@@ -23,11 +23,6 @@ namespace Api.Rtt.Models.Entities
     public DateTime DateEnd { get; set; }
     public DateTime DateRequest { get; set; }
     public int NetRange { get; set; }
-
-    public virtual TennisCenter TennisCenter { get; set; }
-
-    [ForeignKey("TennisCenter")] public int TennisCenterId { get; set; }
-
     public virtual Tournament Qualification { get; set; }
 
     [ForeignKey("Qualification")] public int? QualificationId { get; set; }

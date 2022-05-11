@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Api.Rtt.Models;
 using Api.Rtt.Models.Entities;
 
@@ -7,10 +8,16 @@ namespace Api.Rtt.Helpers
 {
   public class BracketBuilder
   {
-    public List<Bracket> CreateBracketsForFactory(TournamentFactory factory)
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="factory"></param>
+    /// <param name="addedBrackets">Brackets that are already added</param>
+    /// <returns></returns>
+    public List<Bracket> CreateBracketsForFactory(TournamentFactory factory, HashSet<int> addedBrackets = null)
     {
       var list = new List<Bracket>();
-      foreach (var tournament in factory.Tournaments)
+      foreach (var tournament in factory.Tournaments.Where(x => addedBrackets != null && !addedBrackets.Contains(x.Id)))
       {
         if (tournament.Stage == (int)Stage.Qual) continue;
         var bracket = CreateBracket(tournament);

@@ -220,21 +220,6 @@ namespace Api.Rtt.Excel
         _context.Cities.Add(new City() { Name = city });
       }
 
-      if (!string.IsNullOrEmpty(city))
-      {
-        var tournament = _context.Tournaments
-          .Where(x => x.TennisCenter.City.ToLower() == city.ToLower())
-          .Where(x => x.Category == category)
-          .Where(x => x.DateStart > date.AddDays(-7) && x.DateStart < date.AddDays(7))
-          .Where(x => x.Gender == genderInt)
-          .FirstOrDefault(x => x.Age == ageInt);
-
-        if (tournament is null)
-          return null;
-
-        return tournament.Id;
-      }
-
       return null;
     }
   }

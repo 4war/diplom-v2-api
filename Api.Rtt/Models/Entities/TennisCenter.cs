@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Api.Rtt.Models.Entities
 {
@@ -14,6 +15,6 @@ namespace Api.Rtt.Models.Entities
     public string Address { get; set; }
     public string City { get; set; }
 
-    public virtual List<Court> Courts { get; set; } = new ();
+    public virtual List<Court> Courts { get; set; } = new();
   }
 }

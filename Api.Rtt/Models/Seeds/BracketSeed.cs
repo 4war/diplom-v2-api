@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Api.Rtt.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 using MoreLinq;
 
 namespace Api.Rtt.Models.Seeds
@@ -20,7 +21,7 @@ namespace Api.Rtt.Models.Seeds
       {
         new Bracket()
         {
-          Tournament = _context.Tournaments.Find(28),
+          Tournament = _context.Tournaments.First(x => x.Id == 28),
           Rounds = new List<Round>()
           {
             // 1/16
@@ -297,8 +298,13 @@ namespace Api.Rtt.Models.Seeds
       foreach (var bracket in result)
       {
         foreach (var round in bracket.Rounds)
+        {
           for (var i = 0; i < round.Matches.Count; i++)
+          {
             round.Matches[i].PlaceInRound = i;
+          }
+        }
+
 
         bracket.Rounds = bracket.Rounds.OrderBy(x => x.Stage).ToList();
       }

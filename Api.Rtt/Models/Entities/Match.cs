@@ -43,15 +43,28 @@ namespace Api.Rtt.Models.Entities
 
 
     [JsonProperty("score")]
-     public string Score { get; set; }
+    public string Score { get; set; }
 
-     [JsonProperty("placeInRound")]
-     public int PlaceInRound { get; set; }
+    [JsonProperty("placeInRound")]
+    public int PlaceInRound { get; set; }
 
-     [System.Text.Json.Serialization.JsonIgnore]
-     public virtual Round Round { get; set; }
+    [System.Text.Json.Serialization.JsonIgnore]
+    public virtual Round Round { get; set; }
 
-     [JsonProperty("roundId"), ForeignKey("Round")]
-     public int RoundId { get; set; }
+    [JsonProperty("roundId"), ForeignKey("Round")]
+    public int RoundId { get; set; }
+
+    public virtual Court Court { get; set; }
+
+    [ForeignKey("Court")]
+    public int? CourtId { get; set; }
+
+    public int? OrderInSchedule { get; set; }
+
+    [ForeignKey("Schedule")]
+    public int? ScheduleId { get; set; }
+
+    [System.Text.Json.Serialization.JsonIgnore]
+    public virtual Schedule Schedule { get; set; }
   }
 }

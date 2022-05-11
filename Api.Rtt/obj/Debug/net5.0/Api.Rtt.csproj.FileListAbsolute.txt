@@ -69,3 +69,5 @@ C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\nunit.framework.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.DataSet.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll

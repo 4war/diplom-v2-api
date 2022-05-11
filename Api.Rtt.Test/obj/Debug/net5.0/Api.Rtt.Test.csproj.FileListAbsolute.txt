@@ -145,3 +145,5 @@ C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt.Tes
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt.Test\obj\Debug\net5.0\Api.Rtt.Test.pdb
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt.Test\obj\Debug\net5.0\Api.Rtt.Test.genruntimeconfig.cache
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt.Test\bin\Debug\net5.0\Moq.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt.Test\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt.Test\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll

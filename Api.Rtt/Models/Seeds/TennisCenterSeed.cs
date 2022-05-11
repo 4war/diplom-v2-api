@@ -58,7 +58,8 @@ namespace Api.Rtt.Models.Seeds
         new()
         {
           Name = "Тольятти Теннис Центр", Address = "ул. Баныкина, 19А, Тольятти, Самарская обл., 445021",
-          City = "Тольятти", Courts = new List<Court>()
+          City = "Тольятти",
+          Courts = new List<Court>()
           {
             new Court(){Name = "1", Opened = false, Surface = "hard"},
             new Court(){Name = "2", Opened = false, Surface = "hard"},

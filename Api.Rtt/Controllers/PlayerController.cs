@@ -18,7 +18,7 @@ namespace Api.Rtt.Controllers
       _context = context;
     }
 
-    [HttpGet]
+    [HttpGet("list")]
     public IActionResult Get()
     {
       return Ok(_context.Players.Take(40));
@@ -29,17 +29,17 @@ namespace Api.Rtt.Controllers
     {
       var list = await _context.Players.ToListAsync();
       var queryable = list
-        .Where(x => x.Surname.StartsWith(filterOptions.StartWith, StringComparison.InvariantCultureIgnoreCase))
-        .Where(x => string.IsNullOrEmpty(filterOptions.City) || x.City.StartsWith(filterOptions.City, StringComparison.InvariantCultureIgnoreCase))
-        .Where(x => !filterOptions.Gender.HasValue || x.Gender == filterOptions.Gender);
+        .Where(x => string.IsNullOrEmpty(filterOptions.Surname) || x.Surname.StartsWith(filterOptions.Surname, StringComparison.InvariantCultureIgnoreCase))
+        .Where(x => filterOptions.City is null || string.IsNullOrEmpty(filterOptions.City) ||
+                    x.City.StartsWith(filterOptions.City, StringComparison.InvariantCultureIgnoreCase))
+        .Where(x => !filterOptions.Gender.HasValue || x.Gender == filterOptions.Gender.Value)
+        .Where(x => x.Point >= filterOptions.PointsFrom && x.Point <= filterOptions.PointsUntil)
+        .Where(x => x.DateOfBirth.Year > filterOptions.DobYearFrom && x.DateOfBirth.Year < filterOptions.DobYearUntil);
 
-      if (filterOptions.Skip.HasValue)
+      if (filterOptions.Page.HasValue && filterOptions.Take.HasValue)
       {
-        queryable = queryable.Skip(filterOptions.Skip.Value);
-      }
-
-      if (filterOptions.Take.HasValue)
-      {
+        var skip = (filterOptions.Page - 1) * filterOptions.Take;
+        queryable = queryable.Skip(skip.Value);
         queryable = queryable.Take(filterOptions.Take.Value);
       }
 

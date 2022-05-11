@@ -11,7 +11,7 @@ namespace Api.Rtt.Models.Entities
   public class TournamentFactory
   {
     [Key]
-    public int FirstTournamentId { get; set; }
+    public int Id { get; set; }
 
     [JsonProperty("name")]
     public string Name { get; set; }
@@ -43,13 +43,15 @@ namespace Api.Rtt.Models.Entities
     [JsonProperty("tennisCenter")]
     public virtual TennisCenter TennisCenter { get; set; }
 
-    [ForeignKey("TennisCenter")]
+
     public int TennisCenterId { get; set; }
 
     [JsonProperty("genders")]
     public string Genders { get; set; } = string.Join(" ", new List<int> { (int)Gender.Male, (int)Gender.Female });
 
     public virtual List<Tournament> Tournaments { get; set; } = new List<Tournament>();
+
+    public virtual List<Schedule> Schedules { get; set; } = new List<Schedule>();
 
     public void SetDate()
     {
@@ -82,7 +84,6 @@ namespace Api.Rtt.Models.Entities
         }
       }
 
-      FirstTournamentId = list.First(x => x.Stage == (int)Stage.Main).Id;
       Tournaments = list;
       return list;
     }
@@ -119,7 +120,6 @@ namespace Api.Rtt.Models.Entities
         DateEnd = DateEnd,
         DateRequest = DateRequest,
         NetRange = NetRange,
-        TennisCenterId = TennisCenter.Id,
         NumberOfQualificationWinners = NumberOfQualificationWinners,
       };
     }
