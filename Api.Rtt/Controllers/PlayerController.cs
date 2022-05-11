@@ -36,18 +36,6 @@ namespace Api.Rtt.Controllers
         .Where(x => x.Point >= filterOptions.PointsFrom && x.Point <= filterOptions.PointsUntil)
         .Where(x => x.DateOfBirth.Year > filterOptions.DobYearFrom && x.DateOfBirth.Year < filterOptions.DobYearUntil);
 
-      if (filterOptions.Page.HasValue && filterOptions.Take.HasValue)
-      {
-        var skip = (filterOptions.Page - 1) * filterOptions.Take;
-        queryable = queryable.Skip(skip.Value);
-        queryable = queryable.Take(filterOptions.Take.Value);
-      }
-
-      if (!queryable.Any())
-      {
-        return NotFound();
-      }
-
       return Ok(queryable);
     }
 

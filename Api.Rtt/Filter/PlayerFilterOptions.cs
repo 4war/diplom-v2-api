@@ -26,10 +26,5 @@ namespace Api.Rtt.Filter
     [JsonProperty("dobYearUntil")]
     public int DobYearUntil { get; set; }
 
-    [JsonProperty("page")]
-    public int? Page { get; set; }
-
-    [JsonProperty("take")]
-    public int? Take { get; set; }
   }
 }
