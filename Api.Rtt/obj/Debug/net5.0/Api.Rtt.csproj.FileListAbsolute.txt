@@ -71,3 +71,11 @@ C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.DataSet.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\JWT.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

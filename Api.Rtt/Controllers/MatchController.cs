@@ -32,10 +32,7 @@ namespace Api.Rtt.Controllers
     [HttpPatch]
     public IActionResult Patch([FromBody] Match match)
     {
-      if (match is null)
-      {
-        return BadRequest();
-      }
+      if (match is null) return BadRequest();
 
       if (match.Winner is not null) match.WinnerRni = match.Winner.Rni;
       if (match.Player1 is not null) match.Player1Rni = match.Player1.Rni;

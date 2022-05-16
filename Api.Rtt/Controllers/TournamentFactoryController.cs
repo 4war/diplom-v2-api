@@ -62,10 +62,7 @@ namespace Api.Rtt.Controllers
     [HttpPost]
     public IActionResult Post([FromBody] TournamentFactory factory)
     {
-      if (factory is null)
-      {
-        return BadRequest();
-      }
+      if (factory is null) return BadRequest();
 
      var list = factory.Generate().ToList();
 
@@ -76,15 +73,16 @@ namespace Api.Rtt.Controllers
       }
 
       _context.TennisCenters.Attach(factory.TennisCenter);
+      foreach (var court in factory.TennisCenter.Courts)
+        _context.Courts.Attach(court);
 
       _context.TournamentFactories.Add(factory);
       _context.SaveChanges();
 
       var bracketList = _bracketBuilder.CreateBracketsForFactory(factory);
       foreach (var bracket in bracketList)
-      {
         _context.Brackets.Add(bracket);
-      }
+
       _context.SaveChanges();
 
       return Ok(factory);

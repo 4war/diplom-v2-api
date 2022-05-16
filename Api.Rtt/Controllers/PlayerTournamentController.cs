@@ -1,13 +1,12 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Api.Rtt.Models;
 using Api.Rtt.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Api.Rtt.Controllers
 {
+  [Authorize (Roles = "admin")]
   [Route("api/[controller]")]
   public class PlayerTournamentController : Controller
   {
@@ -38,15 +37,12 @@ namespace Api.Rtt.Controllers
     public IActionResult Post([FromRoute] int id, [FromBody] Player player)
     {
       var tournament = _context.Tournaments.FirstOrDefault(x => x.Id == id);
-      if (tournament is null)
-      {
-        return NotFound();
-      }
+      if (tournament is null) return NotFound();
+
+      //todo: check authorization
 
       if (tournament.Players.FirstOrDefault(x => x.Rni == player.Rni) is not null)
-      {
         return BadRequest();
-      }
 
       tournament.Players.Add(player);
       _context.SaveChanges();

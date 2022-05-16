@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 
 namespace Api.Rtt.Models.Entities
@@ -29,25 +27,17 @@ namespace Api.Rtt.Models.Entities
 
     public int NumberOfQualificationWinners { get; set; }
 
-    [System.Text.Json.Serialization.JsonIgnore]
+    [JsonIgnore]
     public virtual List<Player> Players { get; set; } = new();
 
-    [System.Text.Json.Serialization.JsonIgnore]
+    [JsonIgnore]
     public virtual TournamentFactory Factory { get; set; }
 
     [ForeignKey("Factory")]
     public int FactoryId { get; set; }
   }
 
-  public enum Stage
-  {
-    Main,
-    Qual,
-  }
+  public enum Stage { Main, Qual }
 
-  public enum Gender
-  {
-    Male,
-    Female
-  }
+  public enum Gender { Male, Female }
 }

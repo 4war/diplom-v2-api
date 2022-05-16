@@ -1,5 +1,5 @@
-﻿using System.Configuration;
-using Api.Rtt.Models.Entities;
+﻿using Api.Rtt.Models.Entities;
+using Api.Rtt.Models.Entities.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Rtt.Models
@@ -10,10 +10,7 @@ namespace Api.Rtt.Models
     {
     }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-      optionsBuilder.UseLazyLoadingProxies();
-    }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseLazyLoadingProxies();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -32,19 +29,14 @@ namespace Api.Rtt.Models
 
     public DbSet<Tournament> Tournaments { get; set; }
     public DbSet<TournamentFactory> TournamentFactories { get; set; }
-
     public DbSet<TennisCenter> TennisCenters { get; set; }
-
     public DbSet<Player> Players { get; set; }
-
     public DbSet<City> Cities { get; set; }
-
     public DbSet<Match> Matches { get; set; }
-
     public DbSet<Bracket> Brackets { get; set; }
-
     public DbSet<Round> Rounds { get; set; }
-
+    public DbSet<Court> Courts { get; set; }
     public DbSet<Schedule> Schedules { get; set; }
+    public DbSet<Account> Accounts { get; set; }
   }
 }

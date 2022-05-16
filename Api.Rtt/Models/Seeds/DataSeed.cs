@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Api.Rtt.Helpers;
 using Api.Rtt.Models.Entities;
+using Api.Rtt.Models.Entities.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Rtt.Models.Seeds
@@ -60,13 +61,15 @@ namespace Api.Rtt.Models.Seeds
 
       if (!_context.Schedules.Any())
         SeedSchedules();
+
+      if (!_context.Accounts.Any())
+        SeedAccounts();
     }
 
     private void SeedCities()
     {
-      _context.Cities.Add(new City(){Name = "Самара"});
-      _context.Cities.Add(new City(){Name = "Тольятти"});
-
+      _context.Cities.Add(new City() { Name = "Самара" });
+      _context.Cities.Add(new City() { Name = "Тольятти" });
 
       _context.SaveChanges();
     }
@@ -159,6 +162,28 @@ namespace Api.Rtt.Models.Seeds
 
       foreach (var schedule in list)
         _context.Schedules.Add(schedule);
+
+      _context.SaveChanges();
+    }
+
+    private void SeedAccounts()
+    {
+      var list = new List<Account>()
+      {
+        new Account()
+        {
+          Email = "fedro_777@mail.ru", Password = "conterhome2002".GetHashCode(),
+          Roles = string.Join(" ", new List<string>() { "user", "org", "admin" })
+        },
+        new Account() { Email = "a@a.ru", Password = "a".GetHashCode(), Roles = "user" },
+        new Account() { Email = "b@b.ru", Password = "b".GetHashCode(), Roles = "user" },
+        new Account() { Email = "c@c.ru", Password = "c".GetHashCode(), Roles = "user" },
+      };
+
+      foreach (var account in list)
+      {
+        _context.Accounts.Add(account);
+      }
 
       _context.SaveChanges();
     }
