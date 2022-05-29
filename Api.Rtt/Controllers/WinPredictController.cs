@@ -58,10 +58,11 @@ namespace Api.Rtt.Controllers
       const int kc = 3;
       const int kps = 2;
 
-      var f = (GetFormFactorGroup(self, enemy) * kf
-                 * GetPersonalFactorGroup(self, enemy) * kpr
-                 * GetConditionFactorGroup(self, enemy, match) * kc
-                 * GetPsychFactorGroup(self, enemy) * kps) / (kf + kpr + kc + kps)
+      var Ff = GetFormFactorGroup(self, enemy);
+      var Fpr = GetPersonalFactorGroup(self, enemy);
+      var Fc = GetConditionFactorGroup(self, enemy, match);
+      var Fps = GetPsychFactorGroup(self, enemy);
+      var f = (Ff * kf + Fpr * kpr + Fc * kc + Fps * kps) / (kf + kpr + kc + kps)
               * Math.Pow(self.Point / (double)enemy.Point, 0.25);
 
       var result = f / (f + 1);
@@ -99,6 +100,7 @@ namespace Api.Rtt.Controllers
 
     private double GetConditionFactorGroup(Player self, Player enemy, Match match)
     {
+      if (match.Court is null) return 1;
       var selfSurfaceCount = GetSurfaceMatchesFactorCount(self, match.Court.Surface);
       var enemySurfaceCount = GetSurfaceMatchesFactorCount(enemy, match.Court.Surface);
       var fSurface = 1 / (1 + Math.Exp((enemySurfaceCount - selfSurfaceCount) / (double)20)) + 0.5;
@@ -225,6 +227,7 @@ namespace Api.Rtt.Controllers
         fTimeArray.Add((double)Math.Exp(-0.01 * days));
       }
 
+      if (!fTimeArray.Any()) return 1;
       var fEf = fResArray.Zip(fTimeArray, (fRes, fTime) => fRes * fTime).Sum()
                 / fTimeArray.Sum();
 

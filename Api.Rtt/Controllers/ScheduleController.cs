@@ -80,7 +80,7 @@ namespace Api.Rtt.Controllers
       var factory = _context.TournamentFactories.FirstOrDefault(x => x.Id == factoryId);
       if (factory is null) return NotFound();
 
-      var dayNumber = (int)(factory.DateStart - dateTime).TotalDays;
+      var dayNumber = (int)(dateTime -factory.DateStart).TotalDays;
       var stage = (int)Math.Pow(2, 4 - dayNumber);
       var matchList = new List<Match>();
       foreach (var tournament in factory.Tournaments.Where(x => x.Stage == (int)Stage.Main))
