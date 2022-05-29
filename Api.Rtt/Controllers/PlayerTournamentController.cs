@@ -1,12 +1,15 @@
-﻿using System.Linq;
+﻿using System;
+using System.IO;
+using System.Linq;
 using Api.Rtt.Models;
 using Api.Rtt.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace Api.Rtt.Controllers
 {
-  [Authorize (Roles = "admin")]
   [Route("api/[controller]")]
   public class PlayerTournamentController : Controller
   {
@@ -34,12 +37,11 @@ namespace Api.Rtt.Controllers
     }
 
     [HttpPost("{id:int}")]
+    [Authorize(Roles = "org")]
     public IActionResult Post([FromRoute] int id, [FromBody] Player player)
     {
       var tournament = _context.Tournaments.FirstOrDefault(x => x.Id == id);
       if (tournament is null) return NotFound();
-
-      //todo: check authorization
 
       if (tournament.Players.FirstOrDefault(x => x.Rni == player.Rni) is not null)
         return BadRequest();
@@ -50,7 +52,8 @@ namespace Api.Rtt.Controllers
     }
 
     [HttpDelete("{idTournament:int}/{rni:int}")]
-    public IActionResult Post([FromRoute] int idTournament, [FromRoute] int rni)
+    [Authorize(Roles = "org")]
+    public IActionResult Delete([FromRoute] int idTournament, [FromRoute] int rni)
     {
       var tournament = _context.Tournaments.FirstOrDefault(x => x.Id == idTournament);
       if (tournament is null)
@@ -67,6 +70,30 @@ namespace Api.Rtt.Controllers
       tournament.Players.Remove(player);
       _context.SaveChanges();
       return Ok(player);
+    }
+
+    [HttpPost("document"), DisableRequestSizeLimit]
+    public IActionResult Test()
+    {
+      var file = Request.Form.Files[0];
+      using (var ms = new MemoryStream())
+      {
+        file.CopyTo(ms);
+        var fileBytes = ms.ToArray();
+        var s = Convert.ToBase64String(fileBytes);
+        var mug = new Document() { File = fileBytes };
+        _context.Documents.Add(mug);
+        _context.SaveChanges();
+      }
+
+      return Ok();
+    }
+
+    [HttpGet("document"), DisableRequestSizeLimit]
+    public IActionResult GetDocuments()
+    {
+      var document = _context.Documents.First(x => x.Id == 6);
+      return Ok(document.File);
     }
   }
 }

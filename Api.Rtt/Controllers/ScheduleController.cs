@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Api.Rtt.Models;
 using Api.Rtt.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -52,12 +53,12 @@ namespace Api.Rtt.Controllers
         return NotFound();
       }
 
-      var courts = schedule.Matches.Select(x => x.OrderInSchedule)
+      var maxOrder = schedule.Matches.Select(x => x.OrderInSchedule)
         .Where(x => x.HasValue)
-        .Distinct()
-        .OrderBy(x => x.Value);
+        .Max(x => x.Value);
+      var orders = Enumerable.Range(1, maxOrder);
 
-      return Ok(courts);
+      return Ok(orders);
     }
 
     [HttpGet("{factoryId:int}/days")]
@@ -97,6 +98,7 @@ namespace Api.Rtt.Controllers
     }
 
     [HttpPatch]
+    [Authorize(Roles = "org")]
     public IActionResult UpdateScheduleMatches([FromBody] Schedule schedule)
     {
       if (schedule is null) return BadRequest();
@@ -151,6 +153,7 @@ namespace Api.Rtt.Controllers
     /// <param name="match"></param>
     /// <returns></returns>
     [HttpPatch("{factoryId:int}/{day:int}/match")]
+    [Authorize(Roles = "org")]
     public IActionResult UpdateMatch([FromRoute] int factoryId, [FromRoute] int day, [FromBody] Match match)
     {
       if (match is null) return BadRequest();

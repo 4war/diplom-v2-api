@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using Api.Rtt.Helpers;
 using Api.Rtt.Models;
 using Api.Rtt.Models.Entities.Authorization;
 using JWT;
 using JWT.Algorithms;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -26,10 +28,19 @@ namespace Api.Rtt.Controllers.Authorization
       _authOptions = authOptions;
     }
 
+    [HttpPost]
+    [Authorize]
+    public IActionResult Get([FromBody] string email)
+    {
+      var account = _context.Accounts.FirstOrDefault(x => x.Email == email);
+      if (account is null) return NotFound();
+      return Ok(account);
+    }
+
     [HttpPost("register")]
     public IActionResult Register([FromBody] Credentials credentials)
     {
-      var passwordHashcode = credentials.Password.GetHashCode();
+      var passwordHashcode = credentials.Password.PasswordToHashCode();
       var contextAccount =
         _context.Accounts.FirstOrDefault(x => x.Email == credentials.Email);
 
@@ -37,7 +48,6 @@ namespace Api.Rtt.Controllers.Authorization
 
       _context.Accounts.Add(new Account
       {
-        Id = 0,
         Email = credentials.Email,
         Password = passwordHashcode,
         Roles = "user",
@@ -60,7 +70,7 @@ namespace Api.Rtt.Controllers.Authorization
     private Account AuthenticateUser(string email, string password)
     {
       if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password)) return null;
-      var passwordHashCode = password.GetHashCode();
+      var passwordHashCode = password.PasswordToHashCode();
       return _context.Accounts.FirstOrDefault(x => x.Email == email && x.Password == passwordHashCode);
     }
 
@@ -74,7 +84,6 @@ namespace Api.Rtt.Controllers.Authorization
       var claims = new List<Claim>
       {
         new Claim(JwtRegisteredClaimNames.Email, account.Email),
-        new Claim(JwtRegisteredClaimNames.Sub, account.Id.ToString())
       };
 
       claims.AddRange(account.Roles.Split().Select(role => new Claim("role", role)));
@@ -82,7 +91,7 @@ namespace Api.Rtt.Controllers.Authorization
       var token = new JwtSecurityToken(authParams.Issuer,
         authParams.Audience,
         claims: claims,
-        expires: DateTime.Now.AddSeconds(authParams.TokenLifeTime),
+        expires: DateTime.Now.AddHours(authParams.TokenLifeTime),
         signingCredentials: credentials);
 
       return new JwtSecurityTokenHandler().WriteToken(token);

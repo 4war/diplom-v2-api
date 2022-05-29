@@ -64,6 +64,9 @@ namespace Api.Rtt.Models.Seeds
 
       if (!_context.Accounts.Any())
         SeedAccounts();
+
+      if (!_context.TestResults.Any())
+        SeedTestResults();
     }
 
     private void SeedCities()
@@ -172,17 +175,40 @@ namespace Api.Rtt.Models.Seeds
       {
         new Account()
         {
-          Email = "fedro_777@mail.ru", Password = "conterhome2002".GetHashCode(),
+          Email = "fedro_777@mail.ru", Password = "conterhome2002".PasswordToHashCode(),
           Roles = string.Join(" ", new List<string>() { "user", "org", "admin" })
         },
-        new Account() { Email = "a@a.ru", Password = "a".GetHashCode(), Roles = "user" },
-        new Account() { Email = "b@b.ru", Password = "b".GetHashCode(), Roles = "user" },
-        new Account() { Email = "c@c.ru", Password = "c".GetHashCode(), Roles = "user" },
+        new Account() { Email = "a@a.ru", Password = "a".PasswordToHashCode(), Roles = "user" },
+        new Account() { Email = "b@b.ru", Password = "b".PasswordToHashCode(), Roles = "user" },
+        new Account() { Email = "c@c.ru", Password = "c".PasswordToHashCode(), Roles = "user" },
       };
 
       foreach (var account in list)
       {
         _context.Accounts.Add(account);
+      }
+
+      _context.SaveChanges();
+    }
+
+    private void SeedTestResults()
+    {
+      var list = new List<PsychTestResult>()
+      {
+        new PsychTestResult
+        {
+          Rni = 33188,
+          Defensive = 70,
+          Active = 21,
+          Reactive = 30,
+          Moral = 80,
+          LastTimeCompleted = new DateTime(2021, 1, 14),
+        },
+      };
+
+      foreach (var testResult in list)
+      {
+        _context.TestResults.Add(testResult);
       }
 
       _context.SaveChanges();

@@ -10,7 +10,8 @@ namespace Api.Rtt.Models
     {
     }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseLazyLoadingProxies();
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
+      optionsBuilder.UseLazyLoadingProxies();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -38,5 +39,7 @@ namespace Api.Rtt.Models
     public DbSet<Court> Courts { get; set; }
     public DbSet<Schedule> Schedules { get; set; }
     public DbSet<Account> Accounts { get; set; }
+    public DbSet<PsychTestResult> TestResults { get; set; }
+    public DbSet<Document> Documents { get; set; }
   }
 }

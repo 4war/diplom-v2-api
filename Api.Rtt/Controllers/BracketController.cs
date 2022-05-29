@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Api.Rtt.Helpers;
 using Api.Rtt.Models;
 using Api.Rtt.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,18 +36,15 @@ namespace Api.Rtt.Controllers
       return Ok(bracket);
     }
 
-
     [HttpPost("{id:int}/single")]
+    [Authorize(Roles = "org")]
     public IActionResult Create([FromRoute] int id)
     {
       var tournament = _context.Tournaments.FirstOrDefault(x => x.Id == id);
       if (tournament is null) return NotFound();
-
       var bracket = _bracketBuilder.CreateBracket(tournament);
-
       _context.Brackets.Add(bracket);
       _context.SaveChanges();
-
       return Ok(bracket);
     }
 
@@ -97,6 +95,7 @@ namespace Api.Rtt.Controllers
     }
 
     [HttpPatch]
+    [Authorize(Roles = "org")]
     public IActionResult Update([FromBody] Bracket bracket)
     {
       if (bracket is null) return BadRequest();
@@ -118,6 +117,7 @@ namespace Api.Rtt.Controllers
     }
 
     [HttpPatch("move")]
+    [Authorize(Roles = "org")]
     public IActionResult MoveWinnerInBracket([FromBody] Match wonMatch)
     {
       var wonRound = _context.Rounds.FirstOrDefault(x => x.Id == wonMatch.RoundId);

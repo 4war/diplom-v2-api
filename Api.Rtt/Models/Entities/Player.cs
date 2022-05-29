@@ -20,6 +20,8 @@ namespace Api.Rtt.Models.Entities
     public int Point { get; set; }
     public int Gender { get; set; }
 
+    public virtual List<PsychTestResult> TestResults { get; set; }
+
     [JsonIgnore]
     public virtual List<Tournament> Tournaments { get; set; } = new();
   }

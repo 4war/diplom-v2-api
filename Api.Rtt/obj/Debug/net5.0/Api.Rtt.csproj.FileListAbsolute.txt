@@ -79,3 +79,8 @@ C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\System.Drawing.Common.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
