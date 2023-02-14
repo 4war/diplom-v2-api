@@ -71,6 +71,76 @@ C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.DataSet.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\appsettings.json
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\NUnit3.TestAdapter.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\NUnit3.TestAdapter.pdb
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.engine.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.engine.api.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.engine.core.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\testcentric.engine.metadata.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.exe
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.deps.json
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.runtimeconfig.json
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.runtimeconfig.dev.json
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.pdb
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\EntityFrameworkCore.Extensions.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.DataSet.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Google.Protobuf.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Humanizer.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\K4os.Compression.LZ4.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\K4os.Hash.xxHash.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\MoreLinq.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\MySql.Data.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Ubiety.Dns.Core.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Zstandard.Net.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\MySql.EntityFrameworkCore.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.framework.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Renci.SshNet.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\SshNet.Security.Cryptography.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.AssemblyInfoInputs.cache
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.AssemblyInfo.cs
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.csproj.CoreCompileInputs.cache
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\scopedcss\bundle\Api.Rtt.styles.css
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\staticwebassets\Api.Rtt.StaticWebAssets.Manifest.cache
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.RazorTargetAssemblyInfo.cache
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.csproj.CopyComplete
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.pdb
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.genruntimeconfig.cache
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\ref\Api.Rtt.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\JWT.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
@@ -84,3 +154,277 @@ C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
 C:\Users\fedro\Рабочий стол\Диплом\Dikobraz\Api.Rtt\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\JWT.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Drawing.Common.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\ref\Api.Rtt.dll
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.csprojAssemblyReference.cache
+C:\Users\slardar\Desktop\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\staticwebassets\Api.Rtt.StaticWebAssets.xml
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\appsettings.json
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\NUnit3.TestAdapter.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\NUnit3.TestAdapter.pdb
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.engine.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.engine.api.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.engine.core.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\testcentric.engine.metadata.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.StaticWebAssets.xml
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.exe
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.deps.json
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.runtimeconfig.json
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.runtimeconfig.dev.json
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.pdb
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\EntityFrameworkCore.Extensions.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.DataSet.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Google.Protobuf.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Humanizer.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\JWT.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\K4os.Compression.LZ4.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\K4os.Hash.xxHash.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\MoreLinq.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\MySql.Data.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Ubiety.Dns.Core.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Zstandard.Net.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\MySql.EntityFrameworkCore.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.framework.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Renci.SshNet.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\SshNet.Security.Cryptography.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Drawing.Common.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.csproj.AssemblyReference.cache
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.AssemblyInfoInputs.cache
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.AssemblyInfo.cs
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.csproj.CoreCompileInputs.cache
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\scopedcss\bundle\Api.Rtt.styles.css
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\staticwebassets\Api.Rtt.StaticWebAssets.Manifest.cache
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.RazorTargetAssemblyInfo.cache
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.csproj.CopyComplete
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\refint\Api.Rtt.dll
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.pdb
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.genruntimeconfig.cache
+C:\Users\slardar\Desktop\Универ\Диплом\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\ref\Api.Rtt.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\appsettings.json
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\NUnit3.TestAdapter.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\NUnit3.TestAdapter.pdb
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.engine.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.engine.api.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.engine.core.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\testcentric.engine.metadata.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.exe
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.deps.json
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.runtimeconfig.json
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.runtimeconfig.dev.json
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\ref\Api.Rtt.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.pdb
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\EntityFrameworkCore.Extensions.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.DataSet.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Google.Protobuf.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Humanizer.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\JWT.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\K4os.Compression.LZ4.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\K4os.Hash.xxHash.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\MoreLinq.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\MySql.Data.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Ubiety.Dns.Core.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Zstandard.Net.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\MySql.EntityFrameworkCore.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.framework.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Renci.SshNet.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\SshNet.Security.Cryptography.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Drawing.Common.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.csproj.AssemblyReference.cache
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.AssemblyInfoInputs.cache
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.AssemblyInfo.cs
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.csproj.CoreCompileInputs.cache
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\staticwebassets\Api.Rtt.StaticWebAssets.Manifest.cache
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\staticwebassets\Api.Rtt.StaticWebAssets.xml
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\scopedcss\bundle\Api.Rtt.styles.css
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.RazorTargetAssemblyInfo.cache
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.csproj.CopyComplete
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\ref\Api.Rtt.dll
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.pdb
+C:\Users\fedro\Рабочий стол\Магистратура\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.genruntimeconfig.cache
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\appsettings.Development.json
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\appsettings.json
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\NUnit3.TestAdapter.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\NUnit3.TestAdapter.pdb
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.engine.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.engine.api.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.engine.core.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\testcentric.engine.metadata.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.exe
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.deps.json
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.runtimeconfig.json
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.runtimeconfig.dev.json
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\ref\Api.Rtt.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Api.Rtt.pdb
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Castle.Core.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\EntityFrameworkCore.Extensions.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\ExcelDataReader.DataSet.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Google.Protobuf.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Humanizer.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\JWT.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\K4os.Compression.LZ4.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\K4os.Compression.LZ4.Streams.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\K4os.Hash.xxHash.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\MoreLinq.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\MySql.Data.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Ubiety.Dns.Core.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Zstandard.Net.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\MySql.EntityFrameworkCore.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\nunit.framework.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\Renci.SshNet.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\SshNet.Security.Cryptography.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Drawing.Common.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Runtime.Caching.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.csproj.AssemblyReference.cache
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.AssemblyInfoInputs.cache
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.AssemblyInfo.cs
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.csproj.CoreCompileInputs.cache
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.MvcApplicationPartsAssemblyInfo.cache
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\staticwebassets\Api.Rtt.StaticWebAssets.Manifest.cache
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\staticwebassets\Api.Rtt.StaticWebAssets.xml
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\scopedcss\bundle\Api.Rtt.styles.css
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.RazorTargetAssemblyInfo.cache
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.csproj.CopyComplete
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\ref\Api.Rtt.dll
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.pdb
+D:\Desktop\Магистратура\Семак 1\Диплом\Проект\diplom-v2-api\Api.Rtt\obj\Debug\net5.0\Api.Rtt.genruntimeconfig.cache

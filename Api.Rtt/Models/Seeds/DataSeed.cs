@@ -38,7 +38,7 @@ namespace Api.Rtt.Models.Seeds
     public void SeedData()
     {
       //_context.Database.EnsureDeleted();
-      _context.Database.EnsureCreated();
+      //_context.Database.EnsureCreated();
 
       if (!_context.Cities.Any())
         SeedCities();

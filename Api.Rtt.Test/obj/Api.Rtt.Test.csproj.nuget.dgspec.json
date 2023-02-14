@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Api.Rtt.Test\\Api.Rtt.Test.csproj": {}
+    "D:\\Desktop\\Магистратура\\Семак 1\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt.Test\\Api.Rtt.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Api.Rtt.Test\\Api.Rtt.Test.csproj": {
+    "D:\\Desktop\\Магистратура\\Семак 1\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt.Test\\Api.Rtt.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Api.Rtt.Test\\Api.Rtt.Test.csproj",
+        "projectUniqueName": "D:\\Desktop\\Магистратура\\Семак 1\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt.Test\\Api.Rtt.Test.csproj",
         "projectName": "Api.Rtt.Test",
-        "projectPath": "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Api.Rtt.Test\\Api.Rtt.Test.csproj",
+        "projectPath": "D:\\Desktop\\Магистратура\\Семак 1\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt.Test\\Api.Rtt.Test.csproj",
         "packagesPath": "C:\\Users\\fedro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Api.Rtt.Test\\obj\\",
+        "outputPath": "D:\\Desktop\\Магистратура\\Семак 1\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -34,8 +34,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Api.Rtt\\Api.Rtt.csproj": {
-                "projectPath": "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Api.Rtt\\Api.Rtt.csproj"
+              "D:\\Desktop\\Магистратура\\Семак 1\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt\\Api.Rtt.csproj": {
+                "projectPath": "D:\\Desktop\\Магистратура\\Семак 1\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt\\Api.Rtt.csproj"
               }
             }
           }
@@ -86,9 +86,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -97,14 +94,14 @@
         }
       }
     },
-    "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Api.Rtt\\Api.Rtt.csproj": {
+    "D:\\Desktop\\Магистратура\\Семак 1\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt\\Api.Rtt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Api.Rtt\\Api.Rtt.csproj",
+        "projectUniqueName": "D:\\Desktop\\Магистратура\\Семак 1\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt\\Api.Rtt.csproj",
         "projectName": "Api.Rtt",
-        "projectPath": "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Api.Rtt\\Api.Rtt.csproj",
+        "projectPath": "D:\\Desktop\\Магистратура\\Семак 1\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt\\Api.Rtt.csproj",
         "packagesPath": "C:\\Users\\fedro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fedro\\Рабочий стол\\Диплом\\Dikobraz\\Api.Rtt\\Api.Rtt\\obj\\",
+        "outputPath": "D:\\Desktop\\Магистратура\\Семак 1\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
