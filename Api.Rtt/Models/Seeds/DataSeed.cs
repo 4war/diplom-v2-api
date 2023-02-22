@@ -149,7 +149,7 @@ namespace Api.Rtt.Models.Seeds
 
       foreach (var factory in _context.TournamentFactories)
       {
-        var brackets = _bracketBuilder.CreateBracketsForFactory(factory, addedBrackets);
+        var brackets = _bracketBuilder.AttachBracketsForFactory(factory, addedBrackets);
         foreach (var bracket in brackets)
         {
           _context.Brackets.Add(bracket);

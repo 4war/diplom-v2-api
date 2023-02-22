@@ -11,5 +11,12 @@ namespace Api.Rtt.Models.Entities
     public int Id { get; set; }
 
     public byte[] File { get; set; }
+    
+    public int TournamentId { get; set; }
+    
+    [ForeignKey(nameof(TournamentId))]
+    public virtual Tournament Tournament { get; set; }
+    
+    public string Status { get; set; }
   }
 }

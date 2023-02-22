@@ -97,7 +97,7 @@ namespace Api.Rtt.Controllers
       _context.TournamentFactories.Add(factory);
       _context.SaveChanges();
 
-      var bracketList = _bracketBuilder.CreateBracketsForFactory(factory);
+      var bracketList = _bracketBuilder.CreateBracketForNewFactory(factory);
       foreach (var bracket in bracketList)
         _context.Brackets.Add(bracket);
 
@@ -115,8 +115,12 @@ namespace Api.Rtt.Controllers
       if (factory is null)return NotFound();
 
       foreach (var tournament in factory.Tournaments.ToList())
+      {
+        _context.Documents.RemoveRange(_context.Documents.Where(x => x.TournamentId == tournament.Id));
         _context.Tournaments.Remove(tournament);
-
+      }
+      
+      
       _context.TournamentFactories.Remove(factory);
 
       _context.SaveChanges();

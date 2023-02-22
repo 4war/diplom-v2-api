@@ -123,7 +123,7 @@ namespace Api.Rtt.Controllers
       var wonRound = _context.Rounds.FirstOrDefault(x => x.Id == wonMatch.RoundId);
       if (wonRound is null) return BadRequest();
 
-      if (wonRound.Type == "Final") throw new NotImplementedException();
+      if (wonRound.Type == "Final") return Ok();
 
       var nextRound = wonRound.Bracket.Rounds.FirstOrDefault(x => x.Stage == wonRound.Stage / 2);
       if (nextRound is null) throw new NotImplementedException();

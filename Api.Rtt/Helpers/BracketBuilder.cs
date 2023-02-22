@@ -14,12 +14,26 @@ namespace Api.Rtt.Helpers
     /// <param name="factory"></param>
     /// <param name="addedBrackets">Brackets that are already added</param>
     /// <returns></returns>
-    public List<Bracket> CreateBracketsForFactory(TournamentFactory factory, HashSet<int> addedBrackets = null)
+    public List<Bracket> AttachBracketsForFactory(TournamentFactory factory, HashSet<int> addedBrackets = null)
     {
       var list = new List<Bracket>();
-      foreach (var tournament in factory.Tournaments.Where(x => addedBrackets != null && !addedBrackets.Contains(x.Id)))
+      foreach (var tournament in factory.Tournaments.Where(x => 
+                 addedBrackets != null && !addedBrackets.Contains(x.Id)))
       {
         if (tournament.Stage == (int)Stage.Qual) continue;
+        var bracket = CreateBracket(tournament);
+        list.Add(bracket);
+      }
+
+      return list;
+    }
+    
+    public List<Bracket> CreateBracketForNewFactory(TournamentFactory factory)
+    {
+      var list = new List<Bracket>();
+      foreach (var tournament in factory.Tournaments.Where(x => 
+                 x.Stage != (int)Stage.Qual))
+      {
         var bracket = CreateBracket(tournament);
         list.Add(bracket);
       }
