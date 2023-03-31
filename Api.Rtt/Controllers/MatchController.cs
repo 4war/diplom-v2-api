@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Api.Rtt.Helpers;
 using Api.Rtt.Models;
 using Api.Rtt.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
@@ -13,6 +14,7 @@ namespace Api.Rtt.Controllers
   public class MatchController : Controller
   {
     private readonly ApiContext _context;
+    private readonly Random _random = new Random();
 
     public MatchController(ApiContext context)
     {
@@ -77,6 +79,27 @@ namespace Api.Rtt.Controllers
       }
 
       return Ok(contextMatch.Schedule.Day);
+    }
+
+    [HttpGet("{id:int}/randomize/duration")]
+    public IActionResult RandomizeDuration(int id)
+    {
+      var match = _context.Matches.Find(id);
+      if (match is null)
+      {
+        return NotFound();
+      }
+
+      if (!match.Start.HasValue)
+      {
+        match.Start = _random.RandomizeStartDateTime(match);
+      }
+
+      var duration = _random.RandomizeDurationInSeconds(match);
+      match.End = match.Start.Value.AddSeconds(duration);
+      _context.Matches.Update(match);
+      _context.SaveChanges();
+      return Ok();
     }
   }
 }

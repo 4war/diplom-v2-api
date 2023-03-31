@@ -1,6 +1,8 @@
 ﻿using Api.Rtt.Models.Entities;
 using Api.Rtt.Models.Entities.Authorization;
+using Api.Rtt.Models.Entities.MachineLearning;
 using Microsoft.EntityFrameworkCore;
+// ReSharper disable UnusedAutoPropertyAccessor.Global
 
 namespace Api.Rtt.Models
 {
@@ -41,5 +43,7 @@ namespace Api.Rtt.Models
     public DbSet<Account> Accounts { get; set; }
     public DbSet<PsychTestResult> TestResults { get; set; }
     public DbSet<Document> Documents { get; set; }
+    
+    public DbSet<Regression> RegressionData { get; set; }
   }
 }

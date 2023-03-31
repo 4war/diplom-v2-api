@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Api.Rtt.Helpers;
 using Api.Rtt.Models;
 using Api.Rtt.Models.Seeds;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

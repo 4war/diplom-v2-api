@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9NQIeIC+XIMONvFCghbgQVqoTsVV+/tBmEHdaUQp9zrTSSpKkTeV9FL+8C9TBkfan5YYa/tEbKBIWX3KXV2T8w==",
+  "dgSpecHash": "RnazhYbmTUhw3IOKuhdHRf9BGK9EgCfyTYpKuUhErvuFmK8TIBkqgrFe47Iqt7pj+MozTrWvW8RyD7hyAh9aLA==",
   "success": true,
-  "projectFilePath": "D:\\Desktop\\Магистратура\\Семак 1\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt.Test\\Api.Rtt.Test.csproj",
+  "projectFilePath": "D:\\Desktop\\Магистратура\\Диплом\\Проект\\diplom-v2-api\\Api.Rtt.Test\\Api.Rtt.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fedro\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\fedro\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
