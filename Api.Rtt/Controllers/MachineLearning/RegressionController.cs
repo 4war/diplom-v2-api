@@ -36,7 +36,7 @@ namespace Api.Rtt.Controllers.MachineLearning
             {
                 var existingRegression = _context.RegressionData.Find(match.Id);
                 var factor =
-                    _mathModel.GetPersonalFactorGroup(match, match.Start!.Value);
+                    _mathModel.GetPersonalFactor(match, match.Start!.Value);
                 existingRegression.FactorScoreTimeEffectPersonal = factor;
                 _context.RegressionData.Update(existingRegression);
             }
@@ -51,16 +51,12 @@ namespace Api.Rtt.Controllers.MachineLearning
                 .Where(x => x.Player1Rni.HasValue && x.Player2Rni.HasValue)
                 .Where(x => x.WinnerRni.HasValue)
                 .Where(x => x.Start.HasValue)
-                .AsEnumerable()
-                .Skip(1544).ToList();
+                .AsEnumerable().ToList();
             
             foreach (var match in _matches)
             {
-                var currentPrediction = _mathModel.GetPrediction(match.Player1, match.Player2, match);
-
                 var actual = _mathModel.CalculateScore(match, match.Player1) - 0.5;
                 var regression = _mathModel.GetRegressionData(match);
-                regression.CurrentPrediction = currentPrediction.Win;
                 var existingRegression = _context.RegressionData.Find(match.Id);
                 if (existingRegression == null)
                 {
@@ -70,7 +66,6 @@ namespace Api.Rtt.Controllers.MachineLearning
                 else
                 {
                     existingRegression.Actual = Math.Round(actual * 100);
-                    existingRegression.CurrentPrediction = currentPrediction.Win;
                     existingRegression.FactorScoreTimeEffect = Math.Round(regression.FactorScoreTimeEffect, 2);
                     existingRegression.FactorCount = Math.Round(regression.FactorCount, 2);
                     existingRegression.FactorDiversity = Math.Round(regression.FactorDiversity, 2);

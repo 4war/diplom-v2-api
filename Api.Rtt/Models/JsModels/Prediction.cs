@@ -15,22 +15,10 @@ namespace Api.Rtt.Models.JsModels
         [JsonProperty("date")]
         public DateTime Date { get; set; }
         
-        [JsonProperty("form")]
-        public double Form { get; set; }
-        
-        [JsonProperty("personal")]
-        public double Personal { get; set; }
-        
-        [JsonProperty("condition")]
-        public double Condition { get; set; }
-        
-        [JsonProperty("psych")]
-        public double Psych { get; set; }
-        
-        [JsonProperty("rating")]
-        public double Rating { get; set; }
-        
-        [JsonProperty("win")]
-        public int Win { get; set; }
+        [JsonProperty("clearPrediction")]
+        public int ClearPrediction { get; set; }
+
+        [JsonProperty("ratingPrediction")]
+        public int RatingPrediction { get; set; }
     }
 }

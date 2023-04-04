@@ -34,13 +34,89 @@ namespace Api.Rtt.Helpers
                             .Average(y => y.Point));
         }
 
+        public Prediction GetNotRetartedResult(Match match)
+        {
+            var regressionData = GetRegressionData(match);
+            var factorArray = new double[]
+            {
+                regressionData.FactorScoreTimeEffect,
+                regressionData.FactorCount,
+                regressionData.FactorDiversity,
+                regressionData.FactorScoreTimeEffectPersonal,
+                regressionData.FactorDayTime,
+                regressionData.FactorFatigue,
+                regressionData.FactorMoral,
+                regressionData.FactorStyle,
+            };
+
+            var totalNoRating = factorArray.Aggregate((x, y) => x * y);
+            var totalRating = totalNoRating * regressionData.FactorRating;
+
+            var resultNoRating = GetRelativeResult(totalNoRating);
+            var resultRating = GetRelativeResult(totalRating);
+            return new Prediction()
+            {
+                Date = match.Start!.Value,
+                Self = match.Player1,
+                Enemy = match.Player2,
+                ClearPrediction = (int)(Math.Round(resultNoRating * 100, 0)),
+                RatingPrediction = (int)(Math.Round(resultRating * 100, 0)),
+            };
+        }
+
+        private double GetRelativeResult(double value)
+        {
+            return value / (value + 1);
+        }
+
         public Prediction GetMultiLinearRegressionPredictionNoRating(Match match)
         {
             var regressionData = GetRegressionData(match);
+            var result = new Prediction()
+            {
+                Date = match.Start!.Value,
+                Self = match.Player1,
+                Enemy = match.Player2,
+                ClearPrediction = GetClearPrediction(regressionData),
+                RatingPrediction = GetRatingPrediction(regressionData)
+            };
+
+            return result;
+        }
+
+        private int GetClearPrediction(Regression regressionData)
+        {
             var coefficientArray = new double[]
             {
-                -7.83181626, 18.18779916, -5.02137477, 57.60481569,
-                -16.53513389, 24.20931883, -2.05427604, 13.3723608
+                16.55964844, 8.04340933, -8.56757983, -8.39585571, 35.19347896,
+                2.88224585, -0.15443087
+            };
+
+            var factorArray = new double[]
+            {
+                regressionData.FactorScoreTimeEffect,
+                regressionData.FactorCount,
+                regressionData.FactorDiversity,
+                regressionData.FactorDayTime,
+                regressionData.FactorFatigue,
+                regressionData.FactorMoral,
+                regressionData.FactorStyle
+            };
+
+            var result = coefficientArray.Zip(factorArray, (a, x) => a * x).Sum()
+                         / coefficientArray.Sum();
+
+            return (int)Math.Round(result / (result + 1), 2);
+        }
+
+
+        private int GetRatingPrediction(Regression regressionData)
+        {
+            var coefficientArray = new double[]
+            {
+                -15.4063362, 3.97350453, -3.25148573, 66.49602047,
+                -7.04789544, 14.80812846, -4.76229066, -2.65363531,
+                64.44242284
             };
 
             var factorArray = new double[]
@@ -52,30 +128,15 @@ namespace Api.Rtt.Helpers
                 regressionData.FactorDayTime,
                 regressionData.FactorFatigue,
                 regressionData.FactorMoral,
-                regressionData.FactorStyle
+                regressionData.FactorStyle,
+                regressionData.FactorRating
             };
 
-            var form = coefficientArray[0] * factorArray[0] +
-                       coefficientArray[1] * factorArray[1] +
-                       coefficientArray[2] * factorArray[2];
-            var personal = coefficientArray[3] * factorArray[3];
-            var condition = coefficientArray[4] * factorArray[4] + coefficientArray[5] * factorArray[5];
-            var psych = coefficientArray[6] * factorArray[6] + coefficientArray[7] * factorArray[7];
-            var resultWin = coefficientArray.Zip(factorArray, (a, x) => a * x).Sum();
-            var result = new Prediction()
-            {
-                Form = Math.Max(Math.Min(form, 100), 0),
-                Personal = Math.Max(Math.Min(personal, 100), 0),
-                Condition = Math.Max(Math.Min(condition, 100), 0),
-                Psych = Math.Max(Math.Min(psych, 100), 0),
-                Date = match.Start!.Value,
-                Self = match.Player1,
-                Enemy = match.Player2,
-                Rating = 1,
-                Win = (int)Math.Round(resultWin, 0),
-            };
 
-            return result;
+            var result = coefficientArray.Zip(factorArray, (a, x) => a * x).Sum()
+                         / coefficientArray.Sum();
+
+            return (int)Math.Round(result / (result + 1), 2);
         }
 
         public Regression GetRegressionData(Match match)
@@ -84,7 +145,7 @@ namespace Api.Rtt.Helpers
                 GetScoreTimeEfficiencyFactor(match.Player1, match.Player2, match.Start!.Value);
             var diversityFactor = GetDiversityFactor(match.Player1, match.Player2);
             var countFactor = GetCountFactor(match.Player1, match.Player2, match.Start.Value);
-            var personalFactor = GetPersonalFactorGroup(match, match.Start.Value);
+            var personalFactor = GetPersonalFactor(match, match.Start.Value);
             var selfDayTimeFactor = GetDaytimeMatchesFactorCount(match.Player1, match.Start.Value);
             var enemyDayTimeFactor = GetDaytimeMatchesFactorCount(match.Player2, match.Start.Value);
             var dayTimeCountFactor =
@@ -111,44 +172,6 @@ namespace Api.Rtt.Helpers
             return result;
         }
 
-        public Prediction GetPrediction(Player self, Player enemy, Match match)
-        {
-            const int kf = 4;
-            const int kpr = 5;
-            const int kc = 1;
-            const int kps = 1;
-
-            if (!match.Start.HasValue)
-            {
-                var startDate = _random.RandomizeStartDateTime(match);
-                match.Start = startDate;
-                _context.Matches.Update(match);
-                _context.SaveChanges();
-            }
-
-            // ReSharper disable InconsistentNaming
-            var Ff = GetFormFactorGroup(self, enemy, match.Start.Value);
-            var Fpr = GetPersonalFactorGroup(match, match.Start.Value);
-            var Fc = GetConditionFactorGroup(self, enemy, match);
-            var Fps = GetPsychFactorGroup(self, enemy);
-            var Fr = Math.Pow(self.Point / (double)enemy.Point, 0.25);
-            var f = (Ff * kf + Fpr * kpr + Fc * kc + Fps * kps) / (kf + kpr + kc + kps) * Fr;
-
-            var result = f / (f + 1);
-            return new Prediction()
-            {
-                Self = self,
-                Enemy = enemy,
-                Date = match.Start.Value,
-                Form = Math.Round(Ff, 2),
-                Personal = Math.Round(Fpr, 2),
-                Condition = Math.Round(Fc, 2),
-                Psych = Math.Round(Fps, 2),
-                Rating = Math.Round(Fr, 2),
-                Win = (int)(Math.Round(result * 100))
-            };
-        }
-
         public double GetFormFactorGroup(Player self, Player enemy, DateTime dateTime)
         {
             var scoreTimeEfficiencyFactor = GetScoreTimeEfficiencyFactor(self, enemy, dateTime);
@@ -164,7 +187,7 @@ namespace Api.Rtt.Helpers
         {
             var selfEfficientFactor = GetEfficiencyFactor(self, dateTime);
             var enemyEfficientFactor = GetEfficiencyFactor(enemy, dateTime);
-            return Math.Pow(selfEfficientFactor / enemyEfficientFactor, 2);
+            return Math.Pow(selfEfficientFactor / enemyEfficientFactor, 0.5);
         }
 
         public double GetDiversityFactor(Player self, Player enemy)
@@ -174,37 +197,31 @@ namespace Api.Rtt.Helpers
             return selfPlayerDiversity / enemyPlayerDiversity;
         }
 
-        public double GetPersonalFactorGroup(Match match, DateTime dateTime)
+        public double GetPersonalFactor(Match match, DateTime dateTime)
         {
             var matches = _context.Matches
                 .Where(x => x.Id != match.Id &&
-                    (x.Player1Rni == match.Player1Rni || x.Player2Rni == match.Player1Rni) &&
-                    (x.Player1Rni == match.Player2Rni || x.Player2Rni == match.Player2Rni) &&
-                    x.Score != null && x.WinnerRni.HasValue)
+                            (x.Player1Rni == match.Player1Rni || x.Player2Rni == match.Player1Rni) &&
+                            (x.Player1Rni == match.Player2Rni || x.Player2Rni == match.Player2Rni) &&
+                            x.Score != null && x.WinnerRni.HasValue)
                 .Where(x => x.Start.HasValue && x.Start < dateTime)
                 .ToList();
 
-            var selfEfficiency = GetEfficiencyFactorFromMatches(match.Player1, matches, dateTime);
-            var enemyEfficiency = GetEfficiencyFactorFromMatches(match.Player2, matches, dateTime);
-            return Math.Sqrt((selfEfficiency + 1) / (enemyEfficiency + 1));
-        }
-
-        public double GetConditionFactorGroup(Player self, Player enemy, Match match)
-        {
-            if (match.Court is null)
+            var fResArray = new List<double>();
+            var fTimeArray = new List<double>();
+            foreach (var playedMatch in matches)
             {
-                var tennisCenterCourts = match.Round.Bracket.Tournament.Factory.TennisCenter.Courts;
-                match.Court = tennisCenterCourts[_random.Next(tennisCenterCourts.Count)];
-                _context.Matches.Update(match);
-                _context.SaveChanges();
+                var days = (dateTime - playedMatch.Start!.Value).TotalDays;
+                var score = CalculateScore(playedMatch, playedMatch.Player1);
+                fResArray.Add(score);
+                fTimeArray.Add(Math.Exp(-0.01 * days));
             }
 
-            var selfSurfaceCount = GetSurfaceMatchesFactorCount(self, match.Court.Surface);
-            var enemySurfaceCount = GetSurfaceMatchesFactorCount(enemy, match.Court.Surface);
-            var fSurface = 1 / (1 + Math.Exp((enemySurfaceCount - selfSurfaceCount) / NormalMatchCount)) + 0.5;
-            var fDayTime = GetDaytimeFactor(self, enemy, match);
-            var fFatigue = GetFatigueFactor(self, enemy, match);
-            return fSurface * fDayTime * fFatigue;
+            if (!fTimeArray.Any()) return 1;
+            var fEf = fResArray.Zip(fTimeArray, (fRes, fTime) => fRes * fTime).Sum()
+                      / fTimeArray.Sum();
+
+            return fEf;
         }
 
         public double GetDaytimeFactor(Player self, Player enemy, Match match)
@@ -360,9 +377,10 @@ namespace Api.Rtt.Helpers
                 .ToList();
             var result = games
                 .Where(x => x.Start.HasValue && x.End.HasValue)
+                .Where(x => (match.Start.Value - x.End.Value).TotalHours > 0)
                 .Select(x => new
                 {
-                    Duration = (x.End.Value - x.Start.Value).TotalMinutes,
+                    Duration = (x.End.Value - x.Start!.Value).TotalMinutes,
                     TimePassed = (match.Start.Value - x.End.Value).TotalHours,
                 }).ToList();
 

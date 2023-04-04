@@ -28,13 +28,13 @@ namespace Api.Rtt.Controllers
         {
             var contextMatch = _context.Matches.FirstOrDefault(x => x.Id == match.Id);
             if (contextMatch?.Player1Rni is null || contextMatch.Player2Rni is null) return NotFound();
-            if (!match.Start.HasValue)
+            if (!contextMatch.Start.HasValue)
             {
-                match.Start = _random.RandomizeStartDateTime(match);
+                contextMatch.Start = _random.RandomizeStartDateTime(contextMatch);
                 _context.SaveChanges();
             }
             
-            return Ok(_mathModel.GetMultiLinearRegressionPredictionNoRating(contextMatch));
+            return Ok(_mathModel.GetNotRetartedResult(contextMatch));
         }
 
         [HttpPost]
@@ -51,7 +51,7 @@ namespace Api.Rtt.Controllers
                 Start = DateTime.Now,
             };
 
-            var result = _mathModel.GetMultiLinearRegressionPredictionNoRating(newMatch);
+            var result = _mathModel.GetNotRetartedResult(newMatch);
             return Ok(result);
         }
 
